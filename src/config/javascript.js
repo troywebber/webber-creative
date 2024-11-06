@@ -8,7 +8,7 @@ module.exports = {
     outputFileExtension: "js",
     init: async function () {
         // Create the /assets/js directory on first build (prevents an error from directory not existing)
-        fs.mkdir('public/assets/js', { recursive: true }, (err) => {
+        fs.mkdir("public/assets/js", { recursive: true }, (err) => {
             if (err) throw err;
         });
     },
@@ -26,12 +26,12 @@ module.exports = {
             bundle: true,
             minify: isProduction,
             sourcemap: !isProduction,
-            target: isProduction ? "es6" : "esnext",
+            target: isProduction ? "es6" : "esnext"
         });
 
         return async () => {
             // Iterate over built files from ESBuild process
-            result.outputFiles.forEach(file => {
+            result.outputFiles.forEach((file) => {
                 // Write the ESBuild files to this new directory
                 fs.writeFile(file.path, file.text, function (err) {
                     if (err) throw err;
@@ -41,4 +41,4 @@ module.exports = {
             return undefined;
         };
     }
-}; 
+};

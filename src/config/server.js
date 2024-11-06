@@ -3,5 +3,5 @@ module.exports = {
     watch: ["public/assets/js/*.js"],
 
     // An accessible variable to determine if the server is in production mode or not
-    isProduction: process.env.ELEVENTY_ENV === "PROD",
+    isProduction: process.env.ELEVENTY_ENV === "PROD"
 };

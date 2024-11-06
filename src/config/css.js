@@ -5,5 +5,5 @@ module.exports = {
         return () => {
             return inputContent;
         };
-    },
+    }
 };
