@@ -1,21 +1,20 @@
 module.exports = {
-    name: "Code Stitch Web Designs",
-    email: "help@codestitch.app",
-    phoneForTel: "555-779-4407",
-    phoneFormatted: "(555) 779-4407",
+    name: "Pixel Perfect Solutions",
+    email: "hello@pixelperfect.dev",
+    phoneForTel: "555-123-4567",
+    phoneFormatted: "(555) 123-4567",
     address: {
-        lineOne: "First Address Line",
-        lineTwo: "Second Address Line",
-        city: "Denver",
-        state: "CO",
-        zip: "80206",
+        lineOne: "123 Digital Avenue",
+        lineTwo: "Suite 404",
+        city: "Austin",
+        state: "TX",
+        zip: "78701",
         country: "US",
-        mapLink: "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+        mapLink: "https://goo.gl/maps/example"
     },
     socials: {
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/"
+        facebook: "https://www.facebook.com/pixelperfect",
+        instagram: "https://www.instagram.com/pixelperfect"
     },
-    //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    domain: "https://www.example.com"
+    domain: "https://www.pixelperfect.dev"
 };
