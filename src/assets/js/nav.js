@@ -1,144 +1,74 @@
-// Select DOM elements
-const bodyElement = document.querySelector("body");
-const navbarMenu = document.querySelector("#cs-navigation");
-const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+// Core navigation initialization
+const initNav = () => {
+    const nav = document.querySelector("#cs-navigation");
+    if (!nav) return;
 
-// Function to toggle the aria-expanded attribute
-function toggleAriaExpanded(element) {
-    const isExpanded = element.getAttribute("aria-expanded");
-    element.setAttribute("aria-expanded", isExpanded === "false" ? "true" : "false");
-}
+    // Initialize core navigation elements
+    const hamburgerMenu = nav.querySelector(".cs-toggle");
+    const navbarMenu = nav.querySelector(".cs-ul-wrapper");
 
-// Function to toggle the menu open or closed
-function toggleMenu() {
-    hamburgerMenu.classList.toggle("cs-active");
-    navbarMenu.classList.toggle("cs-active");
-    bodyElement.classList.toggle("cs-open");
-    toggleAriaExpanded(hamburgerMenu);
-}
-
-// Add click event listener to the hamburger menu
-hamburgerMenu.addEventListener("click", toggleMenu);
-
-// Add click event listener to the navbar menu to handle clicks on the pseudo-element
-navbarMenu.addEventListener("click", function (event) {
-    if (event.target === navbarMenu && navbarMenu.classList.contains("cs-active")) {
-        toggleMenu();
-    }
-});
-
-// Function to handle dropdown toggle
-function toggleDropdown(element) {
-    element.classList.toggle("cs-active");
-    const dropdownButton = element.querySelector(".cs-dropdown-button");
-    if (dropdownButton) {
-        toggleAriaExpanded(dropdownButton);
-    }
-}
-
-// Add event listeners to each dropdown element for accessibility
-const dropdownElements = document.querySelectorAll(".cs-dropdown");
-dropdownElements.forEach((element) => {
-    let escapePressed = false;
-
-    element.addEventListener("focusout", function (event) {
-        // Skip the focusout logic if escape was pressed
-        if (escapePressed) {
-            escapePressed = false;
-            return;
-        }
-
-        // If the focus has moved outside the dropdown, remove the active class from the dropdown
-        if (!element.contains(event.relatedTarget)) {
-            element.classList.remove("cs-active");
-            const dropdownButton = element.querySelector(".cs-dropdown-button");
-
-            if (dropdownButton) {
-                toggleAriaExpanded(dropdownButton);
-            }
-        }
+    // Setup core click handler
+    hamburgerMenu?.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("cs-active");
+        navbarMenu?.classList.toggle("cs-active");
     });
 
-    element.addEventListener("keydown", function (event) {
-        if (element.classList.contains("cs-active")) {
-            event.stopPropagation();
-        }
+    // Defer non-critical features
+    requestIdleCallback(() => {
+        initDropdowns();
+        initScrollBehavior();
+        initKeyboardNav();
+    });
+};
 
-        // Pressing Enter or Space will toggle the dropdown and adjust the aria-expanded attribute
-        if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            toggleDropdown(element);
-        }
+// Dropdown menu functionality
+const initDropdowns = () => {
+    const dropdownLinks = document.querySelectorAll(".cs-drop-li > .cs-li-link");
 
-        // Pressing Escape will remove the active class from the dropdown. The stopPropagation above will stop the hamburger menu from closing
+    dropdownLinks.forEach((link) => {
+        link.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                window.location.href = link.href;
+            }
+        });
+    });
+};
+
+// Smooth scroll behavior
+const initScrollBehavior = () => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute("href"));
+
+            if (target) {
+                // Close mobile menu if open
+                document.querySelector(".cs-ul-wrapper")?.classList.remove("cs-active");
+                document.querySelector(".cs-toggle")?.classList.remove("cs-active");
+
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+};
+
+// Keyboard navigation
+const initKeyboardNav = () => {
+    // Handle Escape key for menu closing
+    document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-            escapePressed = true;
-            toggleDropdown(element);
-        }
-    });
-
-    // Handles dropdown menus on mobile - the matching media query (max-width: 63.9375rem) is necessary so that clicking the dropdown button on desktop does not add the active class and thus interfere with the hover state
-    const maxWidthMediaQuery = window.matchMedia("(max-width: 63.9375rem)");
-    if (maxWidthMediaQuery.matches) {
-        element.addEventListener("click", () => toggleDropdown(element));
-    }
-});
-
-// Pressing Enter will redirect to the href
-const dropdownLinks = document.querySelectorAll(".cs-drop-li > .cs-li-link");
-dropdownLinks.forEach((link) => {
-    link.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            window.location.href = this.href;
-        }
-    });
-});
-
-// If you press Escape and the hamburger menu is open, close it
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && hamburgerMenu.classList.contains("cs-active")) {
-        toggleMenu();
-    }
-});
-
-// Add smooth scrolling to all links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-            // Close mobile menu if open
-            if (navbarMenu.classList.contains("cs-active")) {
-                toggleMenu();
+            const activeMenu = document.querySelector(".cs-ul-wrapper.cs-active");
+            if (activeMenu) {
+                activeMenu.classList.remove("cs-active");
+                document.querySelector(".cs-toggle")?.classList.remove("cs-active");
             }
-
-            // Scroll to section
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
         }
     });
-});
+};
 
-// Add active class to navigation based on scroll position
-window.addEventListener("scroll", () => {
-    const sections = document.querySelectorAll(".section");
-    const navLinks = document.querySelectorAll(".cs-li-link");
-
-    let current = "";
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 100) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach((link) => {
-        link.classList.remove("cs-active");
-        if (link.getAttribute("href").substring(1) === current) {
-            link.classList.add("cs-active");
-        }
-    });
-});
+// Initialize navigation after DOM is loaded
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNav);
+} else {
+    initNav();
+}
