@@ -100,3 +100,45 @@ document.addEventListener("keydown", (event) => {
         toggleMenu();
     }
 });
+
+// Add smooth scrolling to all links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            // Close mobile menu if open
+            if (navbarMenu.classList.contains("cs-active")) {
+                toggleMenu();
+            }
+
+            // Scroll to section
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
+
+// Add active class to navigation based on scroll position
+window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".cs-li-link");
+
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 100) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("cs-active");
+        if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("cs-active");
+        }
+    });
+});
