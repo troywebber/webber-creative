@@ -1,74 +1,65 @@
-// Core navigation initialization
-const initNav = () => {
-    const nav = document.querySelector("#cs-navigation");
-    if (!nav) return;
+// Select DOM elements
+const bodyElement = document.querySelector("body");
+const navbarMenu = document.querySelector("#cs-navigation");
+const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
-    // Initialize core navigation elements
-    const hamburgerMenu = nav.querySelector(".cs-toggle");
-    const navbarMenu = nav.querySelector(".cs-ul-wrapper");
+// Function to toggle the aria-expanded attribute
+function toggleAriaExpanded(element) {
+    const isExpanded = element.getAttribute("aria-expanded");
+    element.setAttribute("aria-expanded", isExpanded === "false" ? "true" : "false");
+}
 
-    // Setup core click handler
-    hamburgerMenu?.addEventListener("click", () => {
-        hamburgerMenu.classList.toggle("cs-active");
-        navbarMenu?.classList.toggle("cs-active");
-    });
+// Function to toggle the menu open or closed
+function toggleMenu() {
+    hamburgerMenu.classList.toggle("cs-active");
+    navbarMenu.classList.toggle("cs-active");
+    bodyElement.classList.toggle("cs-open");
+    toggleAriaExpanded(hamburgerMenu);
+}
 
-    // Defer non-critical features
-    requestIdleCallback(() => {
-        initDropdowns();
-        initScrollBehavior();
-        initKeyboardNav();
-    });
-};
+// Add click event listener to the hamburger menu
+hamburgerMenu.addEventListener("click", toggleMenu);
 
-// Dropdown menu functionality
-const initDropdowns = () => {
-    const dropdownLinks = document.querySelectorAll(".cs-drop-li > .cs-li-link");
+// Add click event listener to the navbar menu to handle clicks on the pseudo-element
+navbarMenu.addEventListener("click", function (event) {
+    if (event.target === navbarMenu && navbarMenu.classList.contains("cs-active")) {
+        toggleMenu();
+    }
+});
 
-    dropdownLinks.forEach((link) => {
-        link.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                window.location.href = link.href;
-            }
-        });
-    });
-};
-
-// Smooth scroll behavior
-const initScrollBehavior = () => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute("href"));
-
-            if (target) {
-                // Close mobile menu if open
-                document.querySelector(".cs-ul-wrapper")?.classList.remove("cs-active");
-                document.querySelector(".cs-toggle")?.classList.remove("cs-active");
-
-                target.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    });
-};
-
-// Keyboard navigation
-const initKeyboardNav = () => {
-    // Handle Escape key for menu closing
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            const activeMenu = document.querySelector(".cs-ul-wrapper.cs-active");
-            if (activeMenu) {
-                activeMenu.classList.remove("cs-active");
-                document.querySelector(".cs-toggle")?.classList.remove("cs-active");
-            }
+// Pressing Enter will redirect to the href
+const dropdownLinks = document.querySelectorAll(".cs-drop-li > .cs-li-link");
+dropdownLinks.forEach((link) => {
+    link.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            window.location.href = this.href;
         }
     });
-};
+});
 
-// Initialize navigation after DOM is loaded
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initNav);
-} else {
-    initNav();
-}
+// If you press Escape and the hamburger menu is open, close it
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && hamburgerMenu.classList.contains("cs-active")) {
+        toggleMenu();
+    }
+});
+
+// Add smooth scrolling to all links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            // Close mobile menu if open
+            if (navbarMenu.classList.contains("cs-active")) {
+                toggleMenu();
+            }
+
+            // Scroll to section
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
