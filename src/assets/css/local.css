@@ -403,5 +403,8 @@
     background-color: var(--medium);
   }
 }
+#sbs-1308 .cs-picture img {
+  object-position: left center;
+}
 
 /*# sourceMappingURL=local.css.map */

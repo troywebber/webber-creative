@@ -134,6 +134,17 @@
     position: relative;
     z-index: 1;
     border-radius: 1rem;
+    min-height: 17.5rem;
+    height: 100%;
+  }
+  #hero-1619 .cs-item .cs-icon {
+    margin-bottom: 1.5rem;
+  }
+  #hero-1619 .cs-item .cs-h3 {
+    margin-bottom: 1rem;
+  }
+  #hero-1619 .cs-item .cs-item-text {
+    flex-grow: 1;
   }
   #hero-1619 .cs-icon {
     width: 3rem;
