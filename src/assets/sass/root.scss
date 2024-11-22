@@ -1928,3 +1928,30 @@
 .cs-price.animate {
     transform: scale(1);
 }
+
+// Add these to your existing animations
+.cs-faq-item {
+    opacity: 1; // Start visible
+    transform: translateY(0); // Start in position
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+// Only animate the FAQ content
+.cs-faq-item .cs-item-p {
+    transition: height 0.3s, opacity 0.3s, margin-bottom 0.3s;
+}
+
+// When FAQ item is active
+.cs-faq-item.active .cs-item-p {
+    height: auto;
+    opacity: 1;
+    margin-bottom: clamp(0.75rem, 1.3vw, 1rem);
+}
+
+// Initial state for FAQ content
+.cs-faq-item .cs-item-p {
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+}

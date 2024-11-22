@@ -21,7 +21,6 @@ const animateElements = [
     ".cs-card-group .cs-item",
     ".cs-image-group",
     ".cs-content",
-    ".cs-faq-item",
     ".cs-price"
 ];
 
