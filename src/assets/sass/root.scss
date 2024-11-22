@@ -1892,3 +1892,39 @@
         }
     }
 }
+
+// Animation Classes
+.animate-init {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Special animations for cards
+.cs-card-group .cs-item.animate-init {
+    transform: translateY(50px);
+}
+
+// Special animations for images
+.cs-image-group.animate-init {
+    transform: translateX(-50px);
+}
+
+// Special animations for FAQ items
+.cs-faq-item.animate-init {
+    transform: translateX(30px);
+}
+
+// Special animations for pricing cards
+.cs-price.animate-init {
+    transform: scale(0.9);
+}
+
+.cs-price.animate {
+    transform: scale(1);
+}
