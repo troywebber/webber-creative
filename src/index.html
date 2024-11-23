@@ -236,17 +236,11 @@ eleventyNavigation:
 
     <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
     <picture class="cs-background">
-        <source
-            media="(max-width: 600px)"
-            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting7-m.jpeg"
-        />
-        <source
-            media="(min-width: 601px)"
-            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting7.jpg"
-        />
+        <source media="(max-width: 600px)" srcset="/assets/images/meeting.webp" />
+        <source media="(min-width: 601px)" srcset="/assets/images/meeting.webp" />
         <img
             decoding="async"
-            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting7.jpg"
+            src="/assets/images/meeting.webp"
             alt="meeting"
             width="2250"
             height="1500"
@@ -269,12 +263,12 @@ eleventyNavigation:
             </div>
             <!--Image-->
             <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="/assets/images/coder.jpg" />
-                <source media="(min-width: 601px)" srcset="/assets/images/coder.jpg" />
+                <source media="(max-width: 600px)" srcset="/assets/images/coder.webp" />
+                <source media="(min-width: 601px)" srcset="/assets/images/coder.webp" />
                 <img
                     loading="lazy"
                     decoding="async"
-                    src="/assets/images/coder.jpg"
+                    src="/assets/images/coder.webp"
                     alt="Web developer coding on computer"
                     width="630"
                     height="630"
