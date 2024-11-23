@@ -14,17 +14,25 @@ eleventyNavigation:
 <link rel="stylesheet" href="/assets/css/critical.css" />
 
 <!-- Script for Netlify Identity -->
-<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script defer>
-    if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                });
-            }
-        });
-    }
+<script type="module">
+    // Load identity widget only when needed
+    const loadIdentityWidget = async () => {
+        const { netlifyIdentity } = await import(
+            "https://identity.netlify.com/v1/netlify-identity-widget.js"
+        );
+        if (netlifyIdentity) {
+            netlifyIdentity.on("init", (user) => {
+                if (!user) {
+                    netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    };
+
+    // Load on user interaction or when needed
+    document.querySelector(".login-button")?.addEventListener("click", loadIdentityWidget);
 </script>
 
 <!-- JSON Schema Markup -->
