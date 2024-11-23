@@ -6,6 +6,7 @@
 @media only screen and (min-width: 0rem) {
   :root {
     --primary: #ffba19;
+    --primaryDark: #e6c200;
     --primaryLight: #ffd675;
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
@@ -68,7 +69,7 @@
     text-align: center;
   }
   .cs-button-solid:hover {
-    color: #fff;
+    color: #000;
   }
   .cs-button-solid:hover:before {
     width: 100%;
@@ -81,7 +82,7 @@
     content: "";
     opacity: 1;
     display: block;
-    background-color: #000;
+    background-color: #fff;
     height: 100%;
     width: 0;
     transition: width 0.3s;
@@ -150,11 +151,22 @@
     cursor: pointer;
   }
   .skip {
-    z-index: -1111111;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #000;
+    padding: 0.5rem 1rem;
     opacity: 0;
+    z-index: 999999;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: opacity 0.3s;
+  }
+  .skip:focus {
+    top: 0;
+    opacity: 1;
   }
   /* roboto-regular - latin */
   @font-face {
@@ -1754,6 +1766,17 @@
     font-weight: bold;
     color: #fff;
   }
+}
+.cs-screen-reader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*# sourceMappingURL=root.css.map */

@@ -47,7 +47,7 @@
             href="/assets/fonts/roboto-v29-latin-700.woff2"
             crossorigin
         />
-        <link rel="preload" as="image" href="/assets/images/webber.webp" />
+        <link rel="preload" as="image" href="/assets/images/webber.webp" width="264" height="78" />
 
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
@@ -66,9 +66,7 @@
     </head>
     <body>
         <!--Screen reader skip main nav-->
-        <a class="skip" aria-label="skip to main content" href="#main" tabindex="1"
-            >Click To Skip To Main Content</a
-        >
+        <a href="#main" class="skip">Skip to main content</a>
 
         {% include "components/header.html" %}
         <main id="main">{% block body %}{% endblock %}</main>
