@@ -363,9 +363,9 @@
             padding: 0;
 
             img {
-                height: 100%;
-                width: 100%;
-                /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+                height: 2rem;
+                width: auto;
+                /* ensures the image never overflows the container */
                 object-fit: contain;
                 /* places the image to the left edge of the parent */
                 object-position: left;
@@ -911,10 +911,12 @@
             padding: 0;
 
             img {
-                height: 100%;
-                width: 100%;
-                /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+                height: 60%;
+                width: auto;
+                /* ensures the image never overflows the container */
                 object-fit: contain;
+                /* places the image to the left edge of the parent */
+                object-position: left;
             }
         }
 
@@ -1954,4 +1956,16 @@
     opacity: 0;
     margin: 0;
     overflow: hidden;
+}
+
+/* Footer Logo Styles */
+@media only screen and (min-width: 0rem) {
+    #footer-1147 {
+        .cs-logo {
+            .cs-logo-img {
+                /* makes it white in both modes */
+                filter: grayscale(1) brightness(300%);
+            }
+        }
+    }
 }
