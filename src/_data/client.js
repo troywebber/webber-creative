@@ -4,18 +4,18 @@ module.exports = {
     phoneForTel: "720-123-4567",
     phoneFormatted: "(720) 123-4567",
     address: {
-        lineOne: "1234 Innovation Drive",
-        lineTwo: "Suite 500",
-        city: "Denver",
-        state: "CO",
-        zip: "80202",
-        country: "US",
-        mapLink: "https://goo.gl/maps/example"
+        lineOne: "",
+        lineTwo: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+        mapLink: ""
     },
     socials: {
         facebook: "https://www.facebook.com/webbercreative",
         instagram: "https://www.instagram.com/webbercreative",
-        linkedin: "https://www.linkedin.com/company/webbercreative"
+        linkedin: "https://www.linkedin.com/company/webber.creative.uk"
     },
     domain: "https://www.webbercreative.com"
 };
