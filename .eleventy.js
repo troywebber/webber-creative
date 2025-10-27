@@ -98,6 +98,31 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+
+    /**
+     *  Image processing filters - basic implementations for template compatibility
+     *  These are placeholder filters that return the original URL for now
+     */
+    eleventyConfig.addFilter("resize", (url, options) => {
+        // For now, just return the original URL
+        // In a real implementation, this would resize the image
+        return url;
+    });
+
+    eleventyConfig.addFilter("avif", (url) => {
+        // Convert to .avif extension
+        return url.replace(/\.(jpg|jpeg|png|webp)$/i, '.avif');
+    });
+
+    eleventyConfig.addFilter("webp", (url) => {
+        // Convert to .webp extension
+        return url.replace(/\.(jpg|jpeg|png|avif)$/i, '.webp');
+    });
+
+    eleventyConfig.addFilter("jpeg", (url) => {
+        // Convert to .jpeg extension
+        return url.replace(/\.(png|webp|avif)$/i, '.jpeg');
+    });
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/
@@ -112,6 +137,12 @@ module.exports = function (eleventyConfig) {
      *  Use - {% year %}
      */
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+    /**
+     *  Gets the URL for an asset, used for image optimization and processing.
+     *  Use - {% getUrl "/path/to/asset" %}
+     */
+    eleventyConfig.addShortcode("getUrl", (url) => url);
     /**=====================================================================
                                 END SHORTCODES
     =======================================================================*/
