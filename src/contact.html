@@ -1,6 +1,6 @@
 ---
-title: "Schedule a Call | Webber Creative | United Kingdom"
-description: "Schedule a free consultation call to discuss your web development needs"
+title: "Contact Us | Webber Creative | United Kingdom"
+description: "Get in touch with Webber Creative to discuss your web development needs"
 permalink: "/contact/"
 eleventyNavigation:
     key: Contact
@@ -17,91 +17,29 @@ eleventyNavigation:
 
 <section id="contact">
     <div class="container">
-        <div class="privacy-notice">
-            <p>
-                This booking form uses Calendly which may set cookies for functionality. By
-                continuing, you accept their use.
-            </p>
+        <div class="contact-content">
+            <h1>Get In Touch</h1>
+            <p>Ready to discuss your web development project? We'd love to hear from you.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
+                </div>
+                
+                {% if client.phone %}
+                <div class="contact-method">
+                    <h3>Call Us</h3>
+                    <p><a href="tel:{{ client.phone }}">{{ client.phoneFormatted or client.phone }}</a></p>
+                </div>
+                {% endif %}
+                
+                <div class="contact-method">
+                    <h3>Response Time</h3>
+                    <p>We typically respond within 24 hours during business days.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="script-warning" style="display: none">
-            <p>
-                Some features may be limited due to privacy settings or ad blockers. This won't
-                affect your ability to schedule a meeting.
-            </p>
-        </div>
-
-        <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/troy-webbercreative/30min?hide_gdpr_banner=1"
-            style="
-                min-width: 320px;
-                height: 600px;
-                display: flex;
-                flex-direction: column;
-                margin: 4rem auto;
-            "
-        ></div>
-        <script
-            type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async
-        ></script>
-        <script>
-            // Create a global error handler for Calendly
-            window.calendlyErrorHandler = function (error) {
-                console.warn("Calendly error:", error);
-                const widget = document.querySelector(".calendly-inline-widget");
-                if (widget) {
-                    widget.innerHTML = `
-                        <div class="calendly-error">
-                            <p>The booking system is currently unavailable. Please:</p>
-                            <ul>
-                                <li>Refresh the page and try again</li>
-                                <li>Disable any ad blockers</li>
-                                <li>Or <a href="mailto:${client.email}">email us directly</a></li>
-                            </ul>
-                        </div>
-                    `;
-                }
-            };
-
-            // Initialize Calendly with error handling
-            window.addEventListener("load", function () {
-                try {
-                    // Check if Calendly is blocked
-                    if (typeof Calendly === "undefined") {
-                        window.calendlyErrorHandler(new Error("Calendly failed to load"));
-                        return;
-                    }
-
-                    // Handle third-party cookie warning
-                    if (!navigator.cookieEnabled) {
-                        document.querySelector(".privacy-notice").style.display = "block";
-                    }
-                } catch (error) {
-                    window.calendlyErrorHandler(error);
-                }
-            });
-
-            // Handle script loading errors
-            window.addEventListener(
-                "error",
-                function (event) {
-                    if (event.target.tagName === "SCRIPT") {
-                        // Prevent the error from showing in console
-                        event.preventDefault();
-
-                        // Only show one warning
-                        const warning = document.querySelector(".script-warning");
-                        if (warning) {
-                            warning.style.display = "block";
-                        }
-                    }
-                },
-                true
-            );
-        </script>
     </div>
 </section>
 
