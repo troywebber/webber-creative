@@ -12,6 +12,8 @@ This document serves as the definitive template and toolkit for all CodeStitch p
 -   Implement consistent padding (100px top and bottom on desktop)
 -   Maintain uniform content block structure
 -   Use consistent container sizes (1280px standard, up to 1440px for specific sections)
+-   Follow framework-free approach using pure HTML and CSS
+-   Ensure components integrate seamlessly when combined
 
 ## CSS/SASS Best Practices
 
@@ -20,12 +22,15 @@ This document serves as the definitive template and toolkit for all CodeStitch p
 -   Follow BEM naming convention
 -   Use clamp() for fluid typography and spacing
 -   Maintain consistent spacing units (rem/em)
+-   Follow 4pt design system for uniform spacing
+-   Use unique IDs for each component to scope CSS and prevent interference
 -   Keep CSS selectors specific and maintainable
 -   Use flexbox and grid for layouts
 -   Implement dark mode using CSS variables
 -   Use proper aspect ratios for images
 -   Implement proper margin and padding clamps
 -   Use flex: none to prevent unwanted element squishing
+-   Group media queries for each component for easy navigation
 
 ## HTML Structure
 
@@ -134,6 +139,9 @@ This document serves as the definitive template and toolkit for all CodeStitch p
 -   Create variations for different content needs
 -   Implement proper reverse pairs and triplets
 -   Use proper component organization
+-   Ensure components blend seamlessly when combined
+-   Use unique component IDs to prevent CSS interference
+-   Design components to be easily editable and customizable
 
 ## Personal Component Library
 
