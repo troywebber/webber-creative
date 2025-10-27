@@ -133,8 +133,8 @@
 
         .cs-submit {
             text-transform: uppercase;
-            background-color: var(--secondaryLight);
-            color: var(--headerColor);
+            background-color: var(--primary);
+            color: #1a1a1a;
             border: none;
             transition: color 0.3s;
             &:hover {
