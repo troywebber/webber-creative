@@ -497,7 +497,7 @@ button {
     z-index: 10;
   }
   #cs-navigation .cs-logo img {
-    width: 100%;
+    width: clamp(40%, calc(70% - ((100vw - 390px) / 378px * 30%)), 70%);
     height: 100%;
     object-fit: contain;
     transition: all ease .3s;
@@ -954,7 +954,9 @@ button {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
     z-index: 100;
+    bottom: 0.2rem;
   }
   #cs-navigation .cs-logo img {
     width: auto;
