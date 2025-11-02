@@ -421,6 +421,7 @@ button {
   }
   body.scroll #cs-navigation .cs-logo img {
     height: 30px;
+    width: 100%;
     transition: height ease .3ms;
   }
   body.scroll #cs-navigation:before {
