@@ -4,6 +4,13 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+    .cs-page-wrapper {
+        width: 100%;
+        max-width: calc(1750 / 16 * 1rem);
+        margin: 10rem auto 5rem;
+        position: relative;
+    }
+
     #contact-1750 {
         padding: var(--sectionPadding);
         overflow: hidden;
@@ -13,7 +20,7 @@
         .cs-container {
             width: 100%;
             /* changes to 1024 on desktop */
-            max-width: calc(704/16 * 1rem);
+            max-width: calc(704 / 16 * 1rem);
             margin: auto;
             background-color: #fff;
             display: flex;
@@ -240,9 +247,9 @@
     #contact-1750 {
         .cs-container {
             width: 65%;
-            max-width: calc(1024/16 * 1rem);
+            max-width: calc(1024 / 16 * 1rem);
             margin: 0 auto 0 0;
-            padding: calc(40/16 * 1rem) calc(24/16 * 1rem);
+            padding: calc(40 / 16 * 1rem) calc(24 / 16 * 1rem);
         }
 
         .cs-picture-group {

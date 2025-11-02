@@ -3,6 +3,12 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  .cs-page-wrapper {
+    width: 100%;
+    max-width: 109.375rem;
+    margin: 10rem auto 5rem;
+    position: relative;
+  }
   #contact-1750 {
     padding: var(--sectionPadding);
     overflow: hidden;
