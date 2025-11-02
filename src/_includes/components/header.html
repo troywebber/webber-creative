@@ -5,7 +5,6 @@
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
-        <!--Logo is turned white in the css with a filter on dark mode-->
         <a href="/" class="cs-logo" aria-label="back to home">
             <img src="/assets/images/webber.png" alt="Webber Creative Logo" width="210" height="29" aria-hidden="true" decoding="async">
         </a>
@@ -21,46 +20,34 @@
             </button>
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
             <div class="cs-ul-wrapper">
-                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                <ul class="cs-ul" id="cs-expanded">
                     <li class="cs-li">
-                        <a href="/" class="cs-li-link cs-active">
-                            Home
-                        </a>
+                        <a href="/" class="cs-li-link cs-active" aria-current="page">Home</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/about/" class="cs-li-link">
-                            About
-                        </a>
+                        <a href="/about/" class="cs-li-link">About</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/process/" class="cs-li-link">
-                            Process
-                        </a>
+                        <a href="/process/" class="cs-li-link">Process</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/our-work/" class="cs-li-link">
-                            Our Work
-                        </a>
+                        <a href="/detroit-website-design/" class="cs-li-link">Our Work</a>
                     </li>
                     <li class="cs-li">
-                        <a href="/pricing/" class="cs-li-link">
-                            Pricing
-                        </a>
+                        <a href="/pricing/" class="cs-li-link">Pricing</a>
                     </li>
-                    <li class="cs-li">
-                        <a href="#contact-1105" class="cs-li-link">
-                            Contact
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="#contact-1105" class="cs-button-solid">
-                            Get Started
-                        </a>
+                    <li class="cs-li cs-hide-on-desktop">
+                        <a href="/contact/" class="cs-li-link">Contact</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <div class="cs-contact-group">
+            <a href="tel:313.801.7388" class="cs-phone">
+                <img class="cs-phone-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg" alt="logo" width="24" height="24" aria-hidden="true" decoding="async">
+                (313) 801-7388
+            </a>
+            <a href="/#pricing" class="cs-button-solid">Get Started</a>
         </div>
     </div>
 </header>
