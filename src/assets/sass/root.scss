@@ -1501,6 +1501,36 @@ button {
                     }
                 }
             }
+
+            // Premium Web Package - light background with better contrast
+            &:nth-of-type(2) {
+                background-color: #f5f5f5;
+                border: 1px solid #e8e8e8;
+                
+                .cs-package {
+                    color: #4a4a4a;
+                }
+
+                .cs-price {
+                    color: var(--headerColor);
+                }
+
+                .cs-item-p,
+                .cs-li {
+                    color: var(--bodyTextColor);
+                }
+
+                .cs-icon {
+                    filter: none;
+                }
+
+                .cs-button-solid {
+                    color: #fff;
+                    &:before {
+                        background-color: #000;
+                    }
+                }
+            }
         }
 
         .cs-package {
@@ -1708,6 +1738,40 @@ button {
 
                     .cs-package {
                         color: #fff;
+                    }
+                }
+
+                // Premium Web Package - light background with better contrast even in dark mode
+                &:nth-of-type(2) {
+                    background-color: #f5f5f5;
+                    border: 1px solid #e8e8e8;
+                    
+                    .cs-package {
+                        color: #4a4a4a;
+                    }
+
+                    .cs-price {
+                        color: var(--headerColor);
+                    }
+
+                    .cs-item-p,
+                    .cs-li {
+                        color: var(--bodyTextColor);
+                    }
+
+                    .cs-icon {
+                        filter: none;
+                    }
+
+                    .cs-price-button {
+                        background-color: var(--primary);
+                        color: #fff;
+                        &:before {
+                            background-color: #000;
+                        }
+                        &:hover {
+                            color: #fff;
+                        }
                     }
                 }
             }
