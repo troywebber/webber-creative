@@ -706,7 +706,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(3rem, 6vw, 4rem);
   }
   #steps-1376 .cs-content {
     text-align: center;
@@ -975,7 +974,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(3rem, 10vw, 3.75rem);
   }
   #sbsr-516 .cs-content {
     width: 100%;
@@ -1054,39 +1052,9 @@
     width: 100%;
     max-width: 39.375rem;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: clamp(2.5rem, 6vw, 3rem);
+    justify-content: center;
+    align-items: center;
     order: -1;
-  }
-  #sbsr-516 .cs-stat-group {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: contents;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  #sbsr-516 .cs-stat {
-    list-style: none;
-    max-width: 14.375rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  #sbsr-516 .cs-number {
-    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
-    line-height: 1.2em;
-    font-weight: 700;
-    color: var(--primary);
-  }
-  #sbsr-516 .cs-desc {
-    font-size: 1rem;
-    line-height: 1.5em;
-    font-weight: 400;
-    margin: 0;
   }
   #sbsr-516 .cs-picture {
     width: 100%;
@@ -1100,7 +1068,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    object-fit: cover;
     border-radius: 1rem;
   }
 }
@@ -1113,11 +1080,12 @@
     justify-content: space-between;
   }
   #sbsr-516 .cs-image-group {
-    width: 68%;
+    width: 48%;
+    margin: auto 0;
     order: 2;
-  }
-  #sbsr-516 .cs-stat-group {
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #sbsr-516 .cs-picture {
     height: clamp(21.25rem, 35vw, 28.8125rem);
@@ -1129,9 +1097,6 @@
     background-color: rgba(0, 0, 0, 0.2);
   }
   body.dark-mode #sbsr-516 .cs-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #sbsr-516 .cs-desc {
     color: var(--bodyTextColorWhite);
   }
   body.dark-mode #sbsr-516 .cs-li {
