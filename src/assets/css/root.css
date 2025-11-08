@@ -5,11 +5,11 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #ffba19;
-    --primaryDark: #e6c200;
-    --primaryLight: #ffd675;
-    --secondary: #001f3f;
-    --secondaryLight: #001f3f;
+    --primary: #0077be;
+    --primaryDark: #005f8c;
+    --primaryLight: #3399cc;
+    --secondary: #1e5a7a;
+    --secondaryLight: #2d6a8f;
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
@@ -63,13 +63,15 @@
     font-size: 1rem;
     line-height: 3.125em;
     font-weight: bold;
-    color: #000;
+    color: #fff;
+    border-radius: 999px;
+    overflow: hidden;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
   }
   .cs-button-solid:hover {
-    color: #000;
+    color: #fff;
   }
   .cs-button-solid:hover:before {
     width: 100%;
@@ -82,9 +84,10 @@
     content: "";
     opacity: 1;
     display: block;
-    background-color: #fff;
+    background-color: #000;
     height: 100%;
     width: 0;
+    border-radius: 999px;
     transition: width 0.3s;
   }
   .cs-hide-on-mobile {
