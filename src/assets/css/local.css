@@ -629,6 +629,7 @@
 @media only screen and (min-width: 0rem) {
   #sbsr-516 {
     padding: var(--sectionPadding);
+    padding-top: clamp(3.75rem, 7.82vw, 6.25rem);
     background: #f7f7f7;
   }
   #sbsr-516 .cs-container {
@@ -640,6 +641,7 @@
     align-items: center;
     overflow: hidden;
     box-sizing: border-box;
+    gap: clamp(2rem, 4vw, 4rem);
   }
   #sbsr-516 .cs-content {
     width: 100%;
