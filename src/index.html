@@ -10,8 +10,14 @@ eleventyNavigation:
 ---
 
 {% extends "layouts/base.html" %} {% block head %}
-<link rel="stylesheet" href="/assets/css/local.css" />
 <link rel="stylesheet" href="/assets/css/critical.css" />
+<link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/assets/css/local.css" /></noscript>
+<script>
+/*! loadCSS polyfill for older browsers */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};if(ss.addEventListener){ss.onloadcssdefined=onloadcssdefined}ss.onloadcssdefined(function(){if(ss.media!=="all"){ss.media=media||"all"}});return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this));
+</script>
 <script defer src="/assets/js/comparison-slider.js"></script>
 
 <!-- Script for Netlify Identity -->
@@ -88,13 +94,13 @@ eleventyNavigation:
             <a href="#contact-1105" class="cs-button-solid">Get Started</a>
         </div>
         <picture class="cs-picture">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/laptop.webp" type="image/webp">
+            <!--Mobile Image - smaller size for mobile viewport-->
+            <source media="(max-width: 600px)" srcset="/assets/images/laptop.webp" type="image/webp" sizes="(max-width: 600px) 380px">
             <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp" sizes="(max-width: 1024px) 600px">
             <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp">
-            <img alt="laptop &amp; Iphone" src="/assets/images/laptop.webp" decoding="async" width="600" height="316" fetchpriority="high" aria-hidden="true">
+            <source media="(min-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp" sizes="936px">
+            <img alt="laptop &amp; Iphone" src="/assets/images/laptop.webp" decoding="async" width="600" height="316" fetchpriority="high" sizes="(max-width: 600px) 380px, (max-width: 1024px) 600px, 936px" aria-hidden="true">
         </picture>
     </div>
     <img alt="Waves" src="/assets/svgs/hero-layered-peaks-white.svg" class="cs-wave" fetchpriority="high">
@@ -134,24 +140,24 @@ eleventyNavigation:
                     <div class="cs-slider-before">
                         <picture class="cs-picture">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/before-score.webp" type="image/webp">
+                            <source media="(max-width: 600px)" srcset="/assets/images/before-score.webp" type="image/webp" sizes="(max-width: 600px) 380px">
                             <!--Tablet Image-->
-                            <source media="(max-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp">
+                            <source media="(max-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp" sizes="(max-width: 1024px) 600px">
                             <!--Desktop Image-->
-                            <source media="(min-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp">
-                            <img alt="Before: Slow website performance with low PageSpeed score" src="/assets/images/before-score.webp" decoding="async" width="614" height="461" loading="lazy" class="cs-slider-image">
+                            <source media="(min-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp" sizes="630px">
+                            <img alt="Before: Slow website performance with low PageSpeed score" src="/assets/images/before-score.webp" decoding="async" width="614" height="461" loading="lazy" sizes="(max-width: 600px) 380px, (max-width: 1024px) 600px, 630px" class="cs-slider-image">
                         </picture>
                         <div class="cs-slider-label cs-label-before">Before</div>
                     </div>
                     <div class="cs-slider-after">
                         <picture class="cs-picture">
                             <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
+                            <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp" type="image/webp" sizes="(max-width: 600px) 380px">
                             <!--Tablet Image-->
-                            <source media="(max-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
+                            <source media="(max-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp" sizes="(max-width: 1024px) 600px">
                             <!--Desktop Image-->
-                            <source media="(min-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
-                            <img alt="After: Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" width="614" height="461" loading="lazy" class="cs-slider-image">
+                            <source media="(min-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp" sizes="630px">
+                            <img alt="After: Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" width="614" height="461" loading="lazy" sizes="(max-width: 600px) 380px, (max-width: 1024px) 600px, 630px" class="cs-slider-image">
                         </picture>
                         <div class="cs-slider-label cs-label-after">After</div>
                     </div>
