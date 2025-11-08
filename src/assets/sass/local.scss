@@ -1139,6 +1139,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .cs-content {
@@ -1228,24 +1230,31 @@
 
         .cs-image-group {
             width: 100%;
-            max-width: calc(630 / 16 * 1rem);
+            max-width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             order: -1;
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+            transform: none; // Override any animation transforms that might be applied
         }
 
         .cs-comparison-slider {
             width: 100%;
+            max-width: 100%;
             position: relative;
             border-radius: calc(16 / 16 * 1rem);
             overflow: hidden;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+            margin: 0 auto;
         }
 
         .cs-slider-wrapper {
             position: relative;
             width: 100%;
+            max-width: 100%;
             height: clamp(14rem, 62vw, 21.1875rem);
             cursor: grab;
             user-select: none;
@@ -1283,6 +1292,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            max-width: 100%;
         }
 
         .cs-slider-label {
@@ -1394,6 +1404,7 @@
 
         .cs-picture {
             width: 100%;
+            max-width: 100%;
             height: 100%;
             display: block;
             position: relative;
@@ -1404,6 +1415,7 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
+                max-width: 100%;
                 border-radius: calc(16 / 16 * 1rem);
             }
         }
@@ -1422,6 +1434,7 @@
 
         .cs-image-group {
             width: 48%;
+            max-width: calc(630 / 16 * 1rem);
             margin: auto 0;
             order: 2;
             display: flex;
