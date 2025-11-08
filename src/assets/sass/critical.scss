@@ -43,7 +43,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: calc(4 / 16 * 1rem);
-            color: var(--primary);
+            color: var(--primaryLight);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -330,7 +330,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: calc(16 / 16 * 1rem);
-            color: var(--primary);
+            color: var(--primaryLight);
         }
 
         .cs-title {

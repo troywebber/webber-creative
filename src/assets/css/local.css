@@ -64,6 +64,7 @@
   #sbs .cs-topper {
     margin-bottom: 0.25rem;
     text-align: left;
+    color: #004d70;
   }
   #sbs .cs-title {
     max-width: 50rem;
@@ -391,6 +392,9 @@
     overflow: hidden;
     box-sizing: border-box;
     gap: clamp(2rem, 4vw, 4rem);
+  }
+  #sbsr-516 .cs-topper {
+    color: #004d70;
   }
   #sbsr-516 .cs-content {
     width: 100%;

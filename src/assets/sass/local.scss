@@ -72,6 +72,7 @@
         .cs-topper {
             margin-bottom: calc(4 / 16 * 1rem);
             text-align: left;
+            color: #004d70;
         }
 
         .cs-title {
@@ -461,6 +462,10 @@
             overflow: hidden;
             box-sizing: border-box;
             gap: clamp(2rem, 4vw, 4rem);
+        }
+
+        .cs-topper {
+            color: #004d70;
         }
 
         .cs-content {
