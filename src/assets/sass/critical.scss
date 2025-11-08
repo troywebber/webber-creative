@@ -282,37 +282,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #hero-1619 {
-            .cs-item {
-                background-color: var(--medium);
-            }
-
-            .cs-h3,
-            .cs-item-text {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-icon {
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-text {
-                opacity: 0.8;
-            }
-
-            .cs-background {
-                background-color: #000;
-
-                .cs-wave-pattern {
-                    opacity: 0.8;
-                }
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---        Hero 855            -->
@@ -446,14 +415,6 @@
             line-height: 0;
         }
 
-        .cs-light {
-            display: block;
-        }
-
-        .cs-dark {
-            display: none;
-        }
-
         .cs-bubbles {
             position: absolute;
             border-radius: 50%;
@@ -519,26 +480,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #hero-855 {
-            background: #000;
-
-            .cs-light {
-                display: none;
-            }
-
-            .cs-dark {
-                display: block;
-            }
-
-            .cs-text {
-                opacity: 0.9;
-            }
-        }
-    }
-}
 
 /* ============================================ */
 /*              Bottom Wave                     */
@@ -562,28 +503,6 @@
             line-height: 0;
             transform: rotate(180deg);
         }
-
-        .cs-light {
-            display: block;
-        }
-
-        .cs-dark {
-            display: none;
-        }
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        .cs-bottom-wave {
-            .cs-light {
-                display: none;
-            }
-
-            .cs-dark {
-                display: block;
-            }
-        }
-    }
-}
