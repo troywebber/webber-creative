@@ -32,6 +32,10 @@
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
+        <!-- Resource Hints -->
+        <link rel="dns-prefetch" href="https://identity.netlify.com" />
+        <link rel="preconnect" href="https://csimg.nyc3.cdn.digitaloceanspaces.com" crossorigin />
+
         <!-- Preloads -->
         <link
             rel="preload"
@@ -55,13 +59,7 @@
         {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->
-        <link rel="preload" href="/assets/css/root.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="/assets/css/root.css" /></noscript>
-        <script>
-        /*! loadCSS polyfill for older browsers */
-        (function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
-        var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,before?ref:ref.nextSibling)});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}setTimeout(function(){onloadcssdefined(cb)})};if(ss.addEventListener){ss.onloadcssdefined=onloadcssdefined}ss.onloadcssdefined(function(){if(ss.media!=="all"){ss.media=media||"all"}});return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this));
-        </script>
+        <link rel="stylesheet" href="/assets/css/root.css" />
         <script defer src="/assets/js/nav.js"></script>
 
         {% block head %}{% endblock %}
