@@ -261,5 +261,198 @@
     opacity: 0.8;
   }
 }
+/*-- -------------------------- -->
+<---        Hero 855            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #hero-855 {
+    padding: var(--sectionPadding);
+    padding-top: clamp(12.5rem, 31.95vw, 18.75rem);
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    background: #111926;
+    margin-bottom: 0;
+  }
+  #hero-855 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    position: relative;
+    z-index: 2;
+    padding-bottom: clamp(3rem, 8vw, 6rem);
+  }
+  #hero-855 .cs-content {
+    text-align: left;
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #hero-855 .cs-topper {
+    font-size: clamp(0.8125rem, 1.5vw, 1rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  #hero-855 .cs-title {
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 100%;
+    margin: 0 0 1.5rem 0;
+    color: #fff;
+  }
+  #hero-855 .cs-text {
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: clamp(29rem, 60vw, 38.785rem);
+    margin: 0 0 2rem 0;
+    color: #fff;
+  }
+  #hero-855 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    margin: 0;
+    padding: 0 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-855 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #hero-855 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #hero-855 .cs-picture {
+    width: 100%;
+    max-width: 37.5rem;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-855 .cs-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #hero-855 .cs-wave {
+    width: 100%;
+    /* 80px - 200px */
+    height: clamp(5rem, 12.5vw, 12.5rem);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    line-height: 0;
+  }
+  #hero-855 .cs-light {
+    display: block;
+  }
+  #hero-855 .cs-dark {
+    display: none;
+  }
+  #hero-855 .cs-bubbles {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #hero-855 .cs-bubbles1 {
+    width: clamp(100px, 15vw, 200px);
+    height: clamp(100px, 15vw, 200px);
+    top: 10%;
+    right: 5%;
+    animation: float 20s ease-in-out infinite;
+  }
+  #hero-855 .cs-bubbles2 {
+    width: clamp(80px, 12vw, 150px);
+    height: clamp(80px, 12vw, 150px);
+    bottom: 20%;
+    left: 10%;
+    animation: float 15s ease-in-out infinite reverse;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-30px) translateX(20px);
+  }
+  66% {
+    transform: translateY(20px) translateX(-15px);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #hero-855 .cs-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+  #hero-855 .cs-content {
+    flex: 1;
+    max-width: 37.5rem;
+  }
+  #hero-855 .cs-picture {
+    flex: 1;
+    max-width: 37.5rem;
+  }
+  #hero-855 .cs-wave {
+    /* 100px - 250px */
+    height: clamp(6.25rem, 15.625vw, 15.625rem);
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #hero-855 {
+    background: #000;
+  }
+  body.dark-mode #hero-855 .cs-light {
+    display: none;
+  }
+  body.dark-mode #hero-855 .cs-dark {
+    display: block;
+  }
+  body.dark-mode #hero-855 .cs-text {
+    opacity: 0.9;
+  }
+}
 
 /*# sourceMappingURL=critical.css.map */
