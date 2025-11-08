@@ -454,5 +454,42 @@
     opacity: 0.9;
   }
 }
+/* ============================================ */
+/*              Bottom Wave                     */
+/* ============================================ */
+@media only screen and (min-width: 0rem) {
+  .cs-bottom-wave {
+    width: 100%;
+    position: relative;
+    margin-top: -1px;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    line-height: 0;
+  }
+  .cs-bottom-wave .cs-wave-bottom {
+    width: 100%;
+    /* 80px - 200px */
+    height: clamp(5rem, 12.5vw, 12.5rem);
+    display: block;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+  .cs-bottom-wave .cs-light {
+    display: block;
+  }
+  .cs-bottom-wave .cs-dark {
+    display: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode .cs-bottom-wave .cs-light {
+    display: none;
+  }
+  body.dark-mode .cs-bottom-wave .cs-dark {
+    display: block;
+  }
+}
 
 /*# sourceMappingURL=critical.css.map */
