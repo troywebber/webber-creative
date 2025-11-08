@@ -1056,9 +1056,143 @@
     align-items: center;
     order: -1;
   }
-  #sbsr-516 .cs-picture {
+  #sbsr-516 .cs-comparison-slider {
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+  }
+  #sbsr-516 .cs-slider-wrapper {
+    position: relative;
     width: 100%;
     height: clamp(14rem, 62vw, 21.1875rem);
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+  }
+  #sbsr-516 .cs-slider-wrapper:active {
+    cursor: grabbing;
+  }
+  #sbsr-516 .cs-slider-before,
+  #sbsr-516 .cs-slider-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #sbsr-516 .cs-slider-before {
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+  }
+  #sbsr-516 .cs-slider-after {
+    z-index: 1;
+  }
+  #sbsr-516 .cs-slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #sbsr-516 .cs-slider-label {
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+  #sbsr-516 .cs-label-before {
+    left: 1rem;
+  }
+  #sbsr-516 .cs-label-after {
+    right: 1rem;
+  }
+  #sbsr-516 .cs-slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0.1875rem;
+    height: 100%;
+    z-index: 3;
+    transform: translateX(-50%);
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  #sbsr-516 .cs-slider-handle:hover .cs-slider-line {
+    width: 0.25rem;
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.8);
+  }
+  #sbsr-516 .cs-slider-handle:hover .cs-slider-grip {
+    transform: translateY(-50%) scale(1.1);
+  }
+  #sbsr-516 .cs-slider-handle:active {
+    cursor: grabbing;
+  }
+  #sbsr-516 .cs-slider-handle:focus {
+    outline: 0.125rem solid var(--primary);
+    outline-offset: -0.125rem;
+  }
+  #sbsr-516 .cs-slider-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.1875rem;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 0 0.0625rem rgba(255, 255, 255, 0.6), 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+  #sbsr-516 .cs-slider-grip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0.1875rem solid var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  #sbsr-516 .cs-slider-grip::before, #sbsr-516 .cs-slider-grip::after {
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+  }
+  #sbsr-516 .cs-slider-grip::before {
+    width: 0.125rem;
+    height: 0.75rem;
+    left: calc(50% - 0.375rem);
+    top: calc(50% - 0.375rem);
+  }
+  #sbsr-516 .cs-slider-grip::after {
+    width: 0.75rem;
+    height: 0.125rem;
+    left: calc(50% - 0.375rem);
+    top: calc(50% - 0.375rem);
+  }
+  #sbsr-516 .cs-picture {
+    width: 100%;
+    height: 100%;
     display: block;
     position: relative;
   }
@@ -1086,6 +1220,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #sbsr-516 .cs-slider-wrapper {
+    height: clamp(21.25rem, 35vw, 28.8125rem);
   }
   #sbsr-516 .cs-picture {
     height: clamp(21.25rem, 35vw, 28.8125rem);

@@ -12,6 +12,7 @@ eleventyNavigation:
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/local.css" />
 <link rel="stylesheet" href="/assets/css/critical.css" />
+<script defer src="/assets/js/comparison-slider.js"></script>
 
 <!-- Script for Netlify Identity -->
 <script type="module">
@@ -334,11 +335,30 @@ eleventyNavigation:
             <a href="/web-design" class="cs-button-solid">More About Us</a>
         </div>
         <div class="cs-image-group">
-            <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp">
-                <source media="(min-width: 601px)" srcset="/assets/images/pagespeed.webp">
-                <img alt="Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" height="461" width="630" loading="lazy" aria-hidden="true">
-            </picture>
+            <div class="cs-comparison-slider">
+                <div class="cs-slider-wrapper">
+                    <div class="cs-slider-before">
+                        <picture class="cs-picture">
+                            <source media="(max-width: 600px)" srcset="/assets/images/before-score.webp">
+                            <source media="(min-width: 601px)" srcset="/assets/images/before-score.webp">
+                            <img alt="Before: Slow website performance with low PageSpeed score" src="/assets/images/before-score.webp" decoding="async" height="461" width="630" loading="lazy" class="cs-slider-image">
+                        </picture>
+                        <div class="cs-slider-label cs-label-before">Before</div>
+                    </div>
+                    <div class="cs-slider-after">
+                        <picture class="cs-picture">
+                            <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp">
+                            <source media="(min-width: 601px)" srcset="/assets/images/pagespeed.webp">
+                            <img alt="After: Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" height="461" width="630" loading="lazy" class="cs-slider-image">
+                        </picture>
+                        <div class="cs-slider-label cs-label-after">After</div>
+                    </div>
+                    <div class="cs-slider-handle" role="slider" aria-label="Image comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                        <div class="cs-slider-line"></div>
+                        <div class="cs-slider-grip"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

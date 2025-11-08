@@ -1235,9 +1235,166 @@
             order: -1;
         }
 
-        .cs-picture {
+        .cs-comparison-slider {
+            width: 100%;
+            position: relative;
+            border-radius: calc(16 / 16 * 1rem);
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+        }
+
+        .cs-slider-wrapper {
+            position: relative;
             width: 100%;
             height: clamp(14rem, 62vw, 21.1875rem);
+            cursor: grab;
+            user-select: none;
+            touch-action: none;
+
+            &:active {
+                cursor: grabbing;
+            }
+        }
+
+        .cs-slider-before,
+        .cs-slider-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .cs-slider-before {
+            z-index: 2;
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .cs-slider-after {
+            z-index: 1;
+        }
+
+        .cs-slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cs-slider-label {
+            position: absolute;
+            top: calc(16 / 16 * 1rem);
+            padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: calc(14 / 16 * 1rem);
+            font-weight: 700;
+            border-radius: calc(4 / 16 * 1rem);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .cs-label-before {
+            left: calc(16 / 16 * 1rem);
+        }
+
+        .cs-label-after {
+            right: calc(16 / 16 * 1rem);
+        }
+
+        .cs-slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: calc(3 / 16 * 1rem);
+            height: 100%;
+            z-index: 3;
+            transform: translateX(-50%);
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+
+            &:hover {
+                .cs-slider-line {
+                    width: calc(4 / 16 * 1rem);
+                    box-shadow: 0 0 0 calc(2 / 16 * 1rem) rgba(255, 255, 255, 0.8);
+                }
+
+                .cs-slider-grip {
+                    transform: translateY(-50%) scale(1.1);
+                }
+            }
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            &:focus {
+                outline: calc(2 / 16 * 1rem) solid var(--primary);
+                outline-offset: calc(-2 / 16 * 1rem);
+            }
+        }
+
+        .cs-slider-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(3 / 16 * 1rem);
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 0 calc(1 / 16 * 1rem) rgba(255, 255, 255, 0.6), 0 0 calc(8 / 16 * 1rem) rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .cs-slider-grip {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(48 / 16 * 1rem);
+            height: calc(48 / 16 * 1rem);
+            background-color: #fff;
+            border-radius: 50%;
+            border: calc(3 / 16 * 1rem) solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            pointer-events: none;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: var(--primary);
+            }
+
+            &::before {
+                width: calc(2 / 16 * 1rem);
+                height: calc(12 / 16 * 1rem);
+                left: calc(50% - 6 / 16 * 1rem);
+                top: calc(50% - 6 / 16 * 1rem);
+            }
+
+            &::after {
+                width: calc(12 / 16 * 1rem);
+                height: calc(2 / 16 * 1rem);
+                left: calc(50% - 6 / 16 * 1rem);
+                top: calc(50% - 6 / 16 * 1rem);
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: 100%;
             display: block;
             position: relative;
 
@@ -1270,6 +1427,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .cs-slider-wrapper {
+            height: clamp(21.25rem, 35vw, 28.8125rem);
         }
 
         .cs-picture {
