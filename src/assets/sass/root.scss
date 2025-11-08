@@ -1197,8 +1197,6 @@ button {
 @media only screen and (min-width: 0rem) {
     #pricing-1087 {
         padding: var(--sectionPadding);
-        /* 60px - 100px */
-        margin-bottom: clamp(3.75rem, 7.82vw, 6.25rem);
         position: relative;
 
         .cs-container {
