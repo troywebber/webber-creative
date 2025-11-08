@@ -88,10 +88,13 @@ eleventyNavigation:
             <a href="#contact-1105" class="cs-button-solid">Get Started</a>
         </div>
         <picture class="cs-picture">
+            <!--Mobile Image-->
             <source media="(max-width: 600px)" srcset="/assets/images/laptop.webp" type="image/webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/laptop.webp" type="image/webp">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp">
+            <!--Desktop Image-->
             <source media="(min-width: 1024px)" srcset="/assets/images/laptop.webp" type="image/webp">
-            <img alt="laptop &amp; Iphone" src="/assets/images/laptop.webp" decoding="async" height="493" width="936" aria-hidden="true">
+            <img alt="laptop &amp; Iphone" src="/assets/images/laptop.webp" decoding="async" width="600" height="316" fetchpriority="high" aria-hidden="true">
         </picture>
     </div>
     <img alt="Waves" src="/assets/svgs/hero-layered-peaks-white.svg" class="cs-wave" fetchpriority="high">
@@ -130,17 +133,25 @@ eleventyNavigation:
                 <div class="cs-slider-wrapper">
                     <div class="cs-slider-before">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/before-score.webp">
-                            <source media="(min-width: 601px)" srcset="/assets/images/before-score.webp">
-                            <img alt="Before: Slow website performance with low PageSpeed score" src="/assets/images/before-score.webp" decoding="async" height="461" width="630" loading="lazy" class="cs-slider-image">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="/assets/images/before-score.webp" type="image/webp">
+                            <!--Tablet Image-->
+                            <source media="(max-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp">
+                            <!--Desktop Image-->
+                            <source media="(min-width: 1024px)" srcset="/assets/images/before-score.webp" type="image/webp">
+                            <img alt="Before: Slow website performance with low PageSpeed score" src="/assets/images/before-score.webp" decoding="async" width="614" height="461" loading="lazy" class="cs-slider-image">
                         </picture>
                         <div class="cs-slider-label cs-label-before">Before</div>
                     </div>
                     <div class="cs-slider-after">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp">
-                            <source media="(min-width: 601px)" srcset="/assets/images/pagespeed.webp">
-                            <img alt="After: Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" height="461" width="630" loading="lazy" class="cs-slider-image">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
+                            <!--Tablet Image-->
+                            <source media="(max-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
+                            <!--Desktop Image-->
+                            <source media="(min-width: 1024px)" srcset="/assets/images/pagespeed.webp" type="image/webp">
+                            <img alt="After: Google PageSpeed Insights showing 100 performance score" src="/assets/images/pagespeed.webp" decoding="async" width="614" height="461" loading="lazy" class="cs-slider-image">
                         </picture>
                         <div class="cs-slider-label cs-label-after">After</div>
                     </div>

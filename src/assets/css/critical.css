@@ -40,7 +40,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 0.25rem;
-    color: var(--primary);
+    color: var(--primaryLight);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,7 +283,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   #hero-855 .cs-title {
     font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
