@@ -6,6 +6,8 @@
 @media only screen and (min-width: 0rem) {
     #steps-1675 {
         padding: var(--sectionPadding);
+        /* 80px - 120px */
+        margin-bottom: clamp(5rem, 8vw, 7.5rem);
 
         .cs-container {
             width: 100%;
@@ -188,8 +190,8 @@
             align-items: stretch;
             flex-direction: column;
             column-gap: auto;
-            /* 48px - 80px */
-            row-gap: clamp(3rem, 6vw, 5rem);
+            /* 48px - 64px */
+            row-gap: clamp(3rem, 6vw, 4rem);
             position: relative;
         }
 
@@ -232,8 +234,9 @@
         .cs-contact-text {
             font-size: calc(16 / 16 * 1rem);
             line-height: 1.5em;
-            text-align: left;
-            margin: 0 0 calc(24 / 16 * 1rem);
+            text-align: center;
+            margin: 0 auto calc(48 / 16 * 1rem);
+            max-width: calc(600 / 16 * 1rem);
             color: var(--bodyTextColor);
         }
 
@@ -307,13 +310,14 @@
 
         .cs-form {
             width: 100%;
+            max-width: calc(600 / 16 * 1rem);
+            margin: 0 auto;
             /* 24px - 48px top and bottom */
             /* 16px - 32px left and right */
             padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 2rem);
             /* prevents flexbox from affecting height and width */
             box-sizing: border-box;
             background-color: #fff;
-            border-radius: calc(16 / 16 * 1rem);
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -366,19 +370,16 @@
             font-weight: 700;
             text-align: center;
             margin: 0;
-            color: #1a1a1a;
-            border: none;
+            color: #fff;
             min-width: calc(150 / 16 * 1rem);
             padding: 0 calc(24 / 16 * 1rem);
-            background-color: var(--secondary);
-            border-radius: calc(4 / 16 * 1rem);
-            overflow: hidden;
+            background-color: var(--primary);
+            border-radius: 0;
             display: inline-block;
             position: relative;
             z-index: 1;
             /* prevents padding from adding to the width */
             box-sizing: border-box;
-            transition: color 0.3s;
 
             &:before {
                 content: "";
@@ -390,12 +391,11 @@
                 top: 0;
                 left: 0;
                 z-index: -1;
-                border-radius: calc(4 / 16 * 1rem);
+                border-radius: 0;
                 transition: width 0.3s;
             }
 
             &:hover {
-                color: #fff;
                 &:before {
                     width: 100%;
                 }
@@ -405,7 +405,7 @@
         .cs-submit {
             width: 100%;
             min-width: calc(283 / 16 * 1rem);
-            border-radius: calc(8 / 16 * 1rem);
+            border-radius: 0;
             &:hover {
                 cursor: pointer;
             }
@@ -438,19 +438,17 @@
     #contact-1150 {
         .cs-container {
             max-width: calc(1280 / 16 * 1rem);
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .cs-contact-group {
-            width: 50%;
-            max-width: calc(630 / 16 * 1rem);
+        .cs-contact-text {
+            /* 32px - 48px */
+            margin-bottom: clamp(2rem, 4vw, 3rem);
         }
 
         .cs-form {
-            width: 46%;
-            max-width: calc(578 / 16 * 1rem);
+            max-width: calc(700 / 16 * 1rem);
         }
 
         .cs-submit {

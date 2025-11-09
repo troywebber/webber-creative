@@ -5,6 +5,8 @@
 @media only screen and (min-width: 0rem) {
   #steps-1675 {
     padding: var(--sectionPadding);
+    /* 80px - 120px */
+    margin-bottom: clamp(5rem, 8vw, 7.5rem);
   }
   #steps-1675 .cs-container {
     width: 100%;
@@ -154,8 +156,8 @@
     align-items: stretch;
     flex-direction: column;
     column-gap: auto;
-    /* 48px - 80px */
-    row-gap: clamp(3rem, 6vw, 5rem);
+    /* 48px - 64px */
+    row-gap: clamp(3rem, 6vw, 4rem);
     position: relative;
   }
   #contact-1150 .cs-content {
@@ -193,8 +195,9 @@
   #contact-1150 .cs-contact-text {
     font-size: 1rem;
     line-height: 1.5em;
-    text-align: left;
-    margin: 0 0 1.5rem;
+    text-align: center;
+    margin: 0 auto 3rem;
+    max-width: 37.5rem;
     color: var(--bodyTextColor);
   }
   #contact-1150 .cs-ul {
@@ -257,13 +260,14 @@
   }
   #contact-1150 .cs-form {
     width: 100%;
+    max-width: 37.5rem;
+    margin: 0 auto;
     /* 24px - 48px top and bottom */
     /* 16px - 32px left and right */
     padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 2rem);
     /* prevents flexbox from affecting height and width */
     box-sizing: border-box;
     background-color: #fff;
-    border-radius: 1rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -312,19 +316,16 @@
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #1a1a1a;
-    border: none;
+    color: #fff;
     min-width: 9.375rem;
     padding: 0 1.5rem;
-    background-color: var(--secondary);
-    border-radius: 0.25rem;
-    overflow: hidden;
+    background-color: var(--primary);
+    border-radius: 0;
     display: inline-block;
     position: relative;
     z-index: 1;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
-    transition: color 0.3s;
   }
   #contact-1150 .cs-button-solid:before {
     content: "";
@@ -336,11 +337,8 @@
     top: 0;
     left: 0;
     z-index: -1;
-    border-radius: 0.25rem;
+    border-radius: 0;
     transition: width 0.3s;
-  }
-  #contact-1150 .cs-button-solid:hover {
-    color: #fff;
   }
   #contact-1150 .cs-button-solid:hover:before {
     width: 100%;
@@ -348,7 +346,7 @@
   #contact-1150 .cs-submit {
     width: 100%;
     min-width: 17.6875rem;
-    border-radius: 0.5rem;
+    border-radius: 0;
   }
   #contact-1150 .cs-submit:hover {
     cursor: pointer;
@@ -375,17 +373,15 @@
 @media only screen and (min-width: 64rem) {
   #contact-1150 .cs-container {
     max-width: 80rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
-  #contact-1150 .cs-contact-group {
-    width: 50%;
-    max-width: 39.375rem;
+  #contact-1150 .cs-contact-text {
+    /* 32px - 48px */
+    margin-bottom: clamp(2rem, 4vw, 3rem);
   }
   #contact-1150 .cs-form {
-    width: 46%;
-    max-width: 36.125rem;
+    max-width: 43.75rem;
   }
   #contact-1150 .cs-submit {
     width: auto;
