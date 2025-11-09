@@ -1,4 +1,27 @@
 /*-- -------------------------- -->
+<---        Interior Hero        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #int-hero {
+    background-color: #fff;
+    min-height: 10rem;
+    padding: 0;
+  }
+  #int-hero picture {
+    display: none;
+  }
+  #int-hero:before {
+    display: none;
+  }
+  #int-hero h1 {
+    color: var(--headerColor);
+  }
+  #int-hero p {
+    color: var(--bodyTextColor);
+  }
+}
+/*-- -------------------------- -->
 <---           Steps            -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
@@ -196,7 +219,8 @@
     font-size: 1rem;
     line-height: 1.5em;
     text-align: center;
-    margin: 0 auto 3rem;
+    /* 16px - 24px */
+    margin: 0 auto clamp(1rem, 2vw, 1.5rem);
     max-width: 37.5rem;
     color: var(--bodyTextColor);
   }
@@ -377,8 +401,8 @@
     align-items: center;
   }
   #contact-1150 .cs-contact-text {
-    /* 32px - 48px */
-    margin-bottom: clamp(2rem, 4vw, 3rem);
+    /* 16px - 24px */
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
   #contact-1150 .cs-form {
     max-width: 43.75rem;
