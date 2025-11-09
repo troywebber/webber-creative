@@ -1,0 +1,29 @@
+/*-- -------------------------- -->
+<---        Interior Hero        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #int-hero {
+        background-color: #fff;
+        min-height: 10rem;
+        padding: 0;
+        
+        picture {
+            display: none;
+        }
+        
+        &:before {
+            display: none;
+        }
+        
+        h1 {
+            color: var(--headerColor);
+        }
+        
+        p {
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
