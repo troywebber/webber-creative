@@ -70,22 +70,32 @@
   #steps-1675 .cs-item:last-of-type::after {
     content: none;
   }
-  #steps-1675 .cs-number {
+  #steps-1675 .cs-icon {
     /* 80px - 100px */
-    font-size: clamp(5rem, 1vw, 6.25rem);
-    font-weight: 900;
-    line-height: 1.2em;
-    color: var(--primary);
-    opacity: 0.12;
+    width: clamp(5rem, 1vw, 6.25rem);
+    height: clamp(5rem, 1vw, 6.25rem);
     display: block;
+    position: relative;
+    opacity: 0.3;
+    /* 16px - 24px */
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+  #steps-1675 .cs-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Filter to match primary color (#0077be) */
+    filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2000%) hue-rotate(185deg) brightness(0.9) contrast(1.2);
   }
   #steps-1675 .cs-h3 {
     /* 20px - 25px */
     font-size: clamp(1.25rem, 2vw, 1.5625rem);
     font-weight: 700;
     line-height: 1.2em;
-    margin: -1.9375rem 0 1rem 0;
+    margin: 0 0 1rem 0;
     color: var(--headerColor);
+    position: relative;
+    z-index: 1;
   }
   #steps-1675 .cs-item-text {
     /* 14px - 16px */
