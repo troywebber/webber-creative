@@ -28,7 +28,7 @@
 @media only screen and (min-width: 0rem) {
   #contact-1388 {
     padding: var(--sectionPadding);
-    background-color: #f7f7f7;
+    background-color: transparent;
     position: relative;
     z-index: 1;
   }
@@ -131,7 +131,7 @@
     padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
     /* prevents flexbox from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #ebebeb;
     border-radius: 1rem;
     display: flex;
     justify-content: space-between;
@@ -165,7 +165,7 @@
     padding: 0;
     padding-left: 1.5rem;
     color: var(--headerColor);
-    background-color: #f7f7f7;
+    background-color: #fff;
     border-radius: 0.5rem;
     border: none;
     /* prevents padding from adding to height and width */
