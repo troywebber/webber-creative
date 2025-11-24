@@ -1,0 +1,78 @@
+---
+title: 'About Us | Webber Creative | United Kingdom'
+description: 'Learn more about Webber Creative and our mission to create professional, custom-coded websites for businesses.'
+preloadImg: '/assets/images/meeting.webp'
+permalink: 'about/'
+eleventyNavigation:
+    key: About
+    order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/root.css" />
+<link rel="stylesheet" href="/assets/css/about.css" />
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--              Interior Hero                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+</section>
+
+<!-- ============================================ -->
+<!--                  Side By Side                -->
+<!-- ============================================ -->
+
+<section id="sbs-2295">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Main Image-->
+            <div class="cs-picture-wrapper1">
+                <picture class="cs-picture cs-picture1">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg" alt="construction" width="272" height="337">
+                </picture>
+                <span class="cs-tag">Before</span>
+            </div>
+            <!--Small Image-->
+            <div class="cs-picture-wrapper2">
+                <picture class="cs-picture cs-picture2">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg" alt="construction" width="243" height="367">
+                </picture>
+                <span class="cs-tag">After</span>
+            </div>
+            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="arrow" width="148" height="54">
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">About Us</span>
+            <h2 class="cs-title">We Build Websites With Purpose & Intent</h2>
+            <p class="cs-text">
+                My name is Troy, and I am the owner and lead developer of Webber Creative. As a full-time software engineer, I have a passion for web development and giving people the online presence they deserve. I've been programming for five years, teaching myself to code websites the right way, by hand, ensuring they are secure, scalable, and fully custom.
+            </p>
+            <p class="cs-text">
+                I quickly found that small businesses face a painful dilemma: they often can't afford the thousands required upfront for a quality website, or they spend the money only to receive an outdated, poorly-performing site built by someone they couldn't trust. This led me to create our flexible £0 down, affordable monthly pricing model. It's more manageable for small to medium businesses and ensures access to premium, high-performance web development without hurting their bank accounts.
+            </p>
+            <a href="/contact/" class="cs-button-solid">Get Started</a>
+        </div>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                  Side By Side                -->
+<!-- ============================================ -->
+
+
+
+{% endblock %}
+
