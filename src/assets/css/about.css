@@ -1,11 +1,34 @@
 /*-- -------------------------- -->
+<---        Interior Hero        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #int-hero {
+    background-color: #fff;
+    min-height: 10rem;
+    padding: 0;
+  }
+  #int-hero picture {
+    display: none;
+  }
+  #int-hero:before {
+    display: none;
+  }
+  #int-hero h1 {
+    color: var(--headerColor);
+  }
+  #int-hero p {
+    color: var(--bodyTextColor);
+  }
+}
+/*-- -------------------------- -->
 <---        Side By Side        -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #sbs-2295 {
     padding: var(--sectionPadding);
-    background-color: #fefcf4;
+    background-color: #fff;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -72,7 +95,11 @@
     font-weight: 700;
     line-height: 1.2em;
     text-align: center;
-    color: var(--headerColor);
+    color: #fff;
+    background-color: rgba(26, 26, 26, 0.85);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    backdrop-filter: blur(4px);
   }
   #sbs-2295 .cs-arrow {
     width: 9.25em;
@@ -112,7 +139,7 @@
     margin: 0;
     padding: 0 1.5rem;
     background-color: var(--primary);
-    color: var(--headerColor);
+    color: #fff;
     display: inline-block;
     position: relative;
     z-index: 1;
