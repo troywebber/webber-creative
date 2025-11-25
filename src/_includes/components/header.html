@@ -20,22 +20,14 @@
             </button>
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
             <div class="cs-ul-wrapper">
-                <ul class="cs-ul" id="cs-expanded">
+                <ul class="cs-ul" id="cs-expanded" aria-expanded="false">
+                    {%- for entry in collections.all | eleventyNavigation %}
                     <li class="cs-li">
-                        <a href="/" class="cs-li-link cs-active" aria-current="page">Home</a>
+                        <a href="{{ entry.url }}" class="cs-li-link{% if entry.url == page.url %} cs-active{% endif %}"{% if entry.url == page.url %} aria-current="page"{% endif %}>
+                            {{ entry.key }}
+                        </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="/about/" class="cs-li-link">About</a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/process/" class="cs-li-link">Process</a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/pricing/" class="cs-li-link">Pricing</a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/contact/" class="cs-li-link">Contact</a>
-                    </li>
+                    {%- endfor %}
                 </ul>
             </div>
         </nav>

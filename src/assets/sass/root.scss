@@ -88,6 +88,16 @@
             }
         }
 
+        &:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
         &:before {
             z-index: -1;
             position: absolute;
@@ -178,6 +188,16 @@
         &:hover {
             cursor: pointer;
         }
+
+        &:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
     }
 
     // Hidden Screen reader skip nav button
@@ -257,6 +277,16 @@
 button {
   background-color: transparent;
   border: 0;
+
+  &:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
 }
 
 /* Mobile - 1023px */
@@ -579,6 +609,16 @@ button {
   }
   #cs-navigation .cs-li-link:hover {
     opacity: 0.8;
+  }
+  #cs-navigation .cs-li-link:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  #cs-navigation .cs-li-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
   #cs-navigation .cs-li-link:before {
     content: '';
@@ -1634,6 +1674,18 @@ button {
 
             &:hover {
                 cursor: pointer;
+            }
+
+            &:focus {
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+                border-radius: 2px;
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+                border-radius: 2px;
             }
 
             &:before {

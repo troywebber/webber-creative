@@ -13,6 +13,26 @@ eleventyNavigation:
 {% block head %}
 <link rel="stylesheet" href="/assets/css/root.css" />
 <link rel="stylesheet" href="/assets/css/about.css" />
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ client.name }}",
+    "url": "{{ client.domain }}{{ page.url }}",
+    {% if preloadImg %}"logo": "{{ client.domain }}{{ preloadImg }}",{% endif %}
+    {% if client.email %}"email": "{{ client.email }}",{% endif %}
+    {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+    {% if client.socials %}
+    "sameAs": [{% for platform, url in client.socials %}
+            {% if not loop.first %},{% endif %}
+            "{{ url }}"
+        {% endfor %}],
+    {% endif %}
+    "description": "{{ description }}"
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -54,7 +74,7 @@ eleventyNavigation:
         </div>
         <div class="cs-content">
             <span class="cs-topper">About Us</span>
-            <h2 class="cs-title">We Build Websites With Purpose & Intent</h2>
+            <h1 class="cs-title">We Build Websites With Purpose & Intent</h1>
             <p class="cs-text">
                 My name is Troy, and I am the owner and lead developer of Webber Creative. As a full-time software engineer, I have a passion for web development and giving people the online presence they deserve. I've been programming for five years, teaching myself to code websites the right way, by hand, ensuring they are secure, scalable, and fully custom.
             </p>

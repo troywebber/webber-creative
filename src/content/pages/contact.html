@@ -1,6 +1,6 @@
 ---
 title: Contact
-description: Contact us for any questions or inquiries.
+description: Get in touch with Webber Creative for custom website development. Contact us via phone, email, or our contact form. We respond within 24 hours.
 permalink: 'contact/'
 eleventyNavigation:
     key: Contact
@@ -13,6 +13,43 @@ eleventyNavigation:
 <link rel="stylesheet" href="/assets/css/root.css" />
 <link rel="stylesheet" href="/assets/css/contact.css" />
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "{{ title }}",
+    "url": "{{ client.domain }}{{ page.url }}",
+    "description": "{{ description }}",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "{{ client.name }}",
+        {% if client.email %}"email": "{{ client.email }}",{% endif %}
+        {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+        {% if client.domain %}"url": "{{ client.domain }}",{% endif %}
+        {% if client.address and client.address.city %}
+        "address": {
+            "@type": "PostalAddress"{% if client.address.lineOne %},
+            "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+            {% endif %}
+            {% if client.address.city %},
+            "addressLocality": "{{ client.address.city }}"
+            {% endif %}
+            {% if client.address.state %},
+            "addressRegion": "{{ client.address.state }}"
+            {% endif %}
+            {% if client.address.zip %},
+            "postalCode": "{{ client.address.zip }}"
+            {% endif %}
+            {% if client.address.country %},
+            "addressCountry": "{{ client.address.country }}"
+            {% endif %}
+        }
+        {% endif %}
+    }
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -32,7 +69,7 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Contact Us</span>
-            <h2 class="cs-title">Get in Touch</h2>
+            <h1 class="cs-title">Get in Touch</h1>
             <p class="cs-text">
                 Send us an email and share your vision for your new website. We respond to all inquiries within 24 hours. Prefer to speak directly? Give us a call for an immediate conversation. If we're unavailable, we'll return your call the same day.
             </p>
@@ -86,7 +123,7 @@ eleventyNavigation:
                 <textarea class="cs-input cs-textarea" required name="message" id="message-1388" placeholder="Write message..."></textarea>
             </label>
             <div data-netlify-recaptcha="true"></div>
-            <button class="cs-button-solid cs-submit" type="submit">Make Appointment</button>
+            <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
         </form>
     </div>
 </section>

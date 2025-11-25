@@ -1,0 +1,56 @@
+---
+title: "404 - Page Not Found | Webber Creative"
+description: "The page you're looking for doesn't exist. Return to our homepage or browse our services."
+permalink: "404.html"
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/root.css" />
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--              Interior Hero                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+</section>
+
+<!-- ============================================ -->
+<!--              404 Error Page                 -->
+<!-- ============================================ -->
+
+<section id="error-404" style="padding: var(--sectionPadding); min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+    <div class="cs-container" style="max-width: 600px; text-align: center;">
+        <h1 style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; margin-bottom: 1rem; color: var(--primary, #1a1a1a);">404</h1>
+        <h2 style="font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem;">Page Not Found</h2>
+        <p style="font-size: clamp(1rem, 2vw, 1.125rem); margin-bottom: 2rem; color: var(--bodyTextColor, #4a4a4a);">
+            Sorry, the page you're looking for doesn't exist or has been moved. 
+            Let's get you back on track.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/" class="cs-button-solid" style="display: inline-block; padding: 0.75rem 2rem; text-decoration: none; border-radius: 0.25rem;">
+                Go to Homepage
+            </a>
+            <a href="/contact/" class="cs-button-solid" style="display: inline-block; padding: 0.75rem 2rem; text-decoration: none; border-radius: 0.25rem;">
+                Contact Us
+            </a>
+        </div>
+        <nav style="margin-top: 3rem;">
+            <p style="margin-bottom: 1rem; font-weight: 600;">Popular Pages:</p>
+            <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <li><a href="/about/" style="text-decoration: underline; color: var(--primary, #1a1a1a);">About</a></li>
+                <li><a href="/pricing/" style="text-decoration: underline; color: var(--primary, #1a1a1a);">Pricing</a></li>
+                <li><a href="/process/" style="text-decoration: underline; color: var(--primary, #1a1a1a);">Process</a></li>
+                <li><a href="/contact/" style="text-decoration: underline; color: var(--primary, #1a1a1a);">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+{% endblock %}
+

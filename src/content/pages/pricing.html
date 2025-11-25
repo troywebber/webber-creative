@@ -13,6 +13,52 @@ eleventyNavigation:
 {% block head %}
 <link rel="stylesheet" href="/assets/css/root.css" />
 <link rel="stylesheet" href="/assets/css/pricing.css" />
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Development Services",
+    "description": "{{ description }}",
+    "provider": {
+        "@type": "Organization",
+        "name": "{{ client.name }}",
+        "url": "{{ client.domain }}",
+        {% if client.email %}"email": "{{ client.email }}",{% endif %}
+        {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}"{% endif %}
+    },
+    "areaServed": ["UK", "USA", "CA", "AUS"],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Essential Web Package",
+            "price": "40",
+            "priceCurrency": "GBP",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "40",
+                "priceCurrency": "GBP",
+                "billingIncrement": "P1M"
+            },
+            "description": "Up to 5 pages, unlimited edits, hosting included, SEO optimization, 24/7 support"
+        },
+        {
+            "@type": "Offer",
+            "name": "Premium Web Package",
+            "price": "60",
+            "priceCurrency": "GBP",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "60",
+                "priceCurrency": "GBP",
+                "billingIncrement": "P1M"
+            },
+            "description": "Up to 10 pages, unlimited edits, hosting included, SEO optimization, blog integration, 24/7 support"
+        }
+    ]
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -32,7 +78,7 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Full Service Website Packages</span>
-            <h2 class="cs-title">Full Service Website Packages</h2>
+            <h1 class="cs-title">Full Service Website Packages</h1>
             <p class="cs-text">
                 A website, and the resources of an entire IT department, included into one
                 easy-to-digest fee. Prices include all taxes. Monthly contract comes with a 6-month

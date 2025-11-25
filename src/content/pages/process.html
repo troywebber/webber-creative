@@ -12,6 +12,48 @@ eleventyNavigation:
 
 {% block head %}
 <link rel="stylesheet" href="/assets/css/process.css" />
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "{{ title }}",
+    "description": "{{ description }}",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Connect With Us",
+            "text": "Reach out to discuss your website vision and requirements. We'll schedule a consultation to understand your business needs and goals."
+        },
+        {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Design and Develop Your Website",
+            "text": "We create a custom, hand-coded website tailored to your brand and business objectives, ensuring high performance and security."
+        },
+        {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Revisions and Feedback",
+            "text": "We work closely with you to refine and perfect your website based on your feedback, ensuring it meets all your requirements."
+        },
+        {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Launch Your Website",
+            "text": "Once everything is perfect, we launch your website and ensure it's live and accessible to your customers."
+        },
+        {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Lifetime Maintenance",
+            "text": "We provide ongoing maintenance and support to keep your website up-to-date and running smoothly for the lifetime of your subscription."
+        }
+    ]
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -31,19 +73,19 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Our Steps</span>
-            <h2 class="cs-title">How To Get Started</h2>
+            <h1 class="cs-title">How To Get Started</h1>
             <p class="cs-text">
-                Designed to maintain your current colour, blend out a growing root or balance your blonde while providing full and semi-permanent coverage.
+                Our streamlined process ensures your website is built efficiently and effectively, from initial consultation to launch and beyond. We work closely with you every step of the way to create a website that perfectly represents your business.
             </p>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item animate-init animate" style="transition-delay: 0s;">
                 <span class="cs-icon" aria-hidden="true">
-                    <img src="/assets/svgs/phone-76.svg" alt="" width="80" height="80" loading="lazy" decoding="async">chan
+                    <img src="/assets/svgs/phone-76.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs-h3">Connect With Us</h3>
                 <p class="cs-item-text">
-                    We provide some of the finest quality, most responsive and reliable, and cost effective services and solutions.
+                    Reach out to discuss your website vision and requirements. We'll schedule a consultation to understand your business needs, goals, and target audience.
                 </p>
             </li>
             <li class="cs-item animate-init animate" style="transition-delay: 0.1s;">
@@ -52,7 +94,7 @@ eleventyNavigation:
                 </span>
                 <h3 class="cs-h3">Design and Develop Your Website</h3>
                 <p class="cs-item-text">
-                    Fortune 500 companies to smaller and medium-sized companies to help manage risks to as low as reasonably practical.
+                    We create a custom, hand-coded website tailored to your brand and business objectives. Every line of code is written from scratch to ensure high performance, security, and a unique design that sets you apart.
                 </p>
             </li>
             <li class="cs-item animate-init animate" style="transition-delay: 0.2s;">
@@ -61,7 +103,7 @@ eleventyNavigation:
                 </span>
                 <h3 class="cs-h3">Revisions and Feedback</h3>
                 <p class="cs-item-text">
-                    Highly experienced staff of more than 100 professionals averaging 29+ years in industry and hands-on knowledge.
+                    We work closely with you to refine and perfect your website based on your feedback. This collaborative approach ensures every detail meets your expectations before launch.
                 </p>
             </li>
             <li class="cs-item animate-init animate" style="transition-delay: 0.3s;">
@@ -70,7 +112,7 @@ eleventyNavigation:
                 </span>
                 <h3 class="cs-h3">Launch Your Website</h3>
                 <p class="cs-item-text">
-                    Highly experienced staff of more than 100 professionals averaging 29+ years in industry and hands-on knowledge.
+                    Once everything is perfect, we launch your website and ensure it's live and accessible to your customers. We handle all technical aspects so you can focus on your business.
                 </p>
             </li>
             <li class="cs-item animate-init animate" style="transition-delay: 0.4s;">
