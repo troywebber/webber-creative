@@ -314,7 +314,7 @@ button:focus-visible {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    transition: transform 0.2s, border-radius 0.3s ease-in-out, background 0.3s;
+    transition: transform 0.2s, border-radius 0.3s ease-in-out, background 0s;
     z-index: -1;
   }
   #cs-navigation.cs-active {
@@ -485,12 +485,14 @@ button:focus-visible {
     z-index: 10001;
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 0.4s, opacity 0.3s;
+    transition: transform 0.4s, opacity 0.3s, visibility 0.3s;
     background: transparent;
     pointer-events: none;
+    visibility: hidden;
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
     pointer-events: auto;
+    visibility: visible;
   }
   #cs-navigation .cs-ul {
     margin: 0;
