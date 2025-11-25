@@ -41,8 +41,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     /* 48px - 64px */
     gap: clamp(3rem, 4vw, 4rem);
+    /* ensure container doesn't allow overflow */
+    overflow: hidden;
   }
   #sbs-2295 .cs-image-group {
     /* scales the whole section down and ties the font size to the vw and stops at 75% of the vale of 1em, changes at desktop */
@@ -55,6 +58,15 @@
     z-index: 1;
     /* prevents flexbox from squishing it */
     flex: none;
+    /* centers the image group on mobile - ensure it doesn't overflow */
+    margin: 0 auto;
+    /* ensures it doesn't overflow the container - constrain to container width */
+    max-width: 100%;
+    /* ensure it stays within bounds */
+    box-sizing: border-box;
+    /* center using transform as fallback */
+    left: 50%;
+    transform: translateX(-50%);
   }
   #sbs-2295 .cs-picture {
     width: 100%;
@@ -199,9 +211,16 @@
 @media only screen and (min-width: 48rem) {
   #sbs-2295 .cs-container {
     max-width: 80rem;
+    /* ensure container is centered */
+    margin-left: auto;
+    margin-right: auto;
   }
   #sbs-2295 .cs-image-group {
     order: initial;
+    /* center the image group on tablet - reset mobile transform and use flexbox centering */
+    left: auto;
+    transform: none;
+    margin: 0 auto;
   }
 }
 /* Desktop - 1024px */
@@ -213,6 +232,9 @@
   #sbs-2295 .cs-image-group {
     font-size: min(1.03vw, 1rem);
     height: auto;
+    /* remove transform centering on desktop - flexbox handles layout */
+    left: auto;
+    transform: none;
   }
   #sbs-2295 .cs-picture-wrapper1 {
     height: auto;
