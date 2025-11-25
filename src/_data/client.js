@@ -1,8 +1,8 @@
 module.exports = {
     name: "Webber Creative",
     email: "troy@webbercreative.com",
-    phoneForTel: "720-123-4567",
-    phoneFormatted: "(720) 123-4567",
+    phoneForTel: "+447367927499",
+    phoneFormatted: "+44 7367 927499",
     address: {
         lineOne: "",
         lineTwo: "",

@@ -1,4 +1,33 @@
 /*-- -------------------------- -->
+<---        Interior Hero        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #int-hero {
+        background-color: #fff;
+        min-height: 10rem;
+        padding: 0;
+        
+        picture {
+            display: none;
+        }
+        
+        &:before {
+            display: none;
+        }
+        
+        h1 {
+            color: var(--headerColor);
+        }
+        
+        p {
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/*-- -------------------------- -->
 <---        Side By Side        -->
 <--- -------------------------- -*/
 
@@ -6,7 +35,7 @@
 @media only screen and (min-width: 0rem) {
     #sbs-2295 {
         padding: var(--sectionPadding);
-        background-color: #fefcf4;
+        background-color: #fff;
         overflow: hidden;
         position: relative;
         z-index: 1;
