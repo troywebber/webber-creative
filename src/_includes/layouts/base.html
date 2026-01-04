@@ -46,15 +46,19 @@
         />
         <link rel="preload" as="image" href="/assets/images/webber.webp" width="264" height="78" />
 
+        {% if preloadImg and preloadImg != '' %}
+        <link rel="preload" as="image" href="{{ preloadImg }}" />
+        {% endif %}
+
         <script>
             function loadScript(a) {
                 var b = document.getElementsByTagName("head")[0],
                     c = document.createElement("script");
-                (c.type = "text/javascript"),
-                    (c.src = "https://tracker.metricool.com/resources/be.js"),
-                    (c.onreadystatechange = a),
-                    (c.onload = a),
-                    b.appendChild(c);
+                c.type = "text/javascript";
+                c.src = "https://tracker.metricool.com/resources/be.js";
+                c.onreadystatechange = a;
+                c.onload = a;
+                b.appendChild(c);
             }
             loadScript(function () {
                 if (typeof beTracker !== 'undefined') {
@@ -62,10 +66,6 @@
                 }
             });
         </script>
-
-        {% if preloadImg and preloadImg != '' %}
-        <link rel="preload" as="image" href="{{ preloadImg }}" />
-        {% endif %}
 
         <link rel="stylesheet" href="/assets/css/root.css" />
         <script defer src="/assets/js/nav.js"></script>
@@ -78,7 +78,11 @@
         <a href="#main" class="skip">Skip to main content</a>
 
         {% include "components/header.html" %}
-        <main id="main">{% block body %}{% endblock %}</main>
+        
+        <main id="main">
+            {% block body %}{% endblock %}
+        </main>
+
         {% include "components/footer.html" %}
         
         <script src="/assets/js/faq.js"></script>
