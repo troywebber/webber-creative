@@ -1,6 +1,9 @@
+<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Standard meta tags -->
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +11,15 @@
         <meta name="keywords" content="" />
         <link rel="canonical" href="{{ client.domain }}{{ page.url }}" />
 
+        <!--Social Media Display-->
         <meta property="og:title" content="{{ title }}" />
         <meta property="og:description" content="{{ description }}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}" />
         <meta property="og:image" content="{{ client.domain }}/assets/images/webber.webp" />
-        <meta
-            property="og:image:secure_url"
-            content="{{ client.domain }}/assets/images/webber.webp"
-        />
+        <meta property="og:image:secure_url" content="{{ client.domain }}/assets/images/webber.webp" />
 
+        <!--Favicons-->
         <link rel="icon" type="image/svg+xml" href="/assets/svgs/webber-logo.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
@@ -26,10 +28,11 @@
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
+        <!-- Resource Hints -->
         <link rel="dns-prefetch" href="https://identity.netlify.com" />
         <link rel="preconnect" href="https://csimg.nyc3.cdn.digitaloceanspaces.com" crossorigin />
-        <link rel="preconnect" href="https://tracker.metricool.com" />
 
+        <!-- Preloads -->
         <link
             rel="preload"
             as="font"
@@ -46,25 +49,12 @@
         />
         <link rel="preload" as="image" href="/assets/images/webber.webp" width="264" height="78" />
 
-        <script>
-            function loadScript(a) {
-                var b = document.getElementsByTagName("head")[0],
-                    c = document.createElement("script");
-                (c.type = "text/javascript"),
-                    (c.src = "https://tracker.metricool.com/resources/be.js"),
-                    (c.onreadystatechange = a),
-                    (c.onload = a),
-                    b.appendChild(c);
-            }
-            loadScript(function () {
-                beTracker.t({ hash: "1f146859027cb95d4cf9dc41c0716c02" });
-            });
-        </script>
-
+        <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
         <link rel="preload" as="image" href="{{ preloadImg }}" />
         {% endif %}
 
+        <!-- Sitewide Stylesheets and Scripts -->
         <link rel="stylesheet" href="/assets/css/root.css" />
         <script defer src="/assets/js/nav.js"></script>
 
@@ -73,12 +63,12 @@
         <title>{{ title }}</title>
     </head>
     <body>
+        <!--Screen reader skip main nav-->
         <a href="#main" class="skip">Skip to main content</a>
 
         {% include "components/header.html" %}
         <main id="main">{% block body %}{% endblock %}</main>
         {% include "components/footer.html" %}
-        
         <script src="/assets/js/faq.js"></script>
         <script src="/assets/js/animations.js" defer></script>
     </body>
