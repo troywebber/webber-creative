@@ -29,7 +29,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://identity.netlify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://identity.netlify.com https://www.google.com; frame-src 'self' https://www.google.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://identity.netlify.com https://tracker.metricool.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://tracker.metricool.com; font-src 'self' data:; connect-src 'self' https://identity.netlify.com https://www.google.com https://tracker.metricool.com; frame-src 'self' https://www.google.com;"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"

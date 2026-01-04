@@ -28,7 +28,6 @@
 
         <link rel="dns-prefetch" href="https://identity.netlify.com" />
         <link rel="preconnect" href="https://csimg.nyc3.cdn.digitaloceanspaces.com" crossorigin />
-        
         <link rel="preconnect" href="https://tracker.metricool.com" />
 
         <link
@@ -58,11 +57,13 @@
                     b.appendChild(c);
             }
             loadScript(function () {
-                beTracker.t({ hash: "1f146859027cb95d4cf9dc41c0716c02" });
+                if (typeof beTracker !== 'undefined') {
+                    beTracker.t({ hash: "1f146859027cb95d4cf9dc41c0716c02" });
+                }
             });
         </script>
 
-        {% if preloadImg != '' %}
+        {% if preloadImg and preloadImg != '' %}
         <link rel="preload" as="image" href="{{ preloadImg }}" />
         {% endif %}
 
@@ -79,6 +80,7 @@
         {% include "components/header.html" %}
         <main id="main">{% block body %}{% endblock %}</main>
         {% include "components/footer.html" %}
+        
         <script src="/assets/js/faq.js"></script>
         <script src="/assets/js/animations.js" defer></script>
     </body>
