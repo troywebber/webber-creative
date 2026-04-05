@@ -1602,7 +1602,7 @@ button {
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #faq-254 {
+    #faq {
         padding: var(--sectionPadding);
         background: #fafbfc;
 
@@ -1811,7 +1811,7 @@ button {
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #faq-254 {
+    #faq {
         .cs-container {
             max-width: calc(1080 / 16 * 1rem);
         }

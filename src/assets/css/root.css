@@ -1470,11 +1470,11 @@ button:focus-visible {
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #faq-254 {
+  #faq {
     padding: var(--sectionPadding);
     background: #fafbfc;
   }
-  #faq-254 .cs-container {
+  #faq .cs-container {
     width: 100%;
     /* changes to 1280px at tablet */
     max-width: 34.375rem;
@@ -1485,7 +1485,7 @@ button:focus-visible {
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #faq-254 .cs-content {
+  #faq .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
@@ -1494,33 +1494,33 @@ button:focus-visible {
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-  #faq-254 .cs-faq-group {
+  #faq .cs-faq-group {
     padding: 0;
     margin: 0;
     margin-bottom: 3rem;
   }
-  #faq-254 .cs-faq-item {
+  #faq .cs-faq-item {
     list-style: none;
     border-bottom: 1px solid #dad9e3;
     transition: border-bottom 0.3s;
   }
-  #faq-254 .cs-faq-item.active {
+  #faq .cs-faq-item.active {
     border-bottom: 1px solid var(--primary);
   }
-  #faq-254 .cs-faq-item.active .cs-button:before {
+  #faq .cs-faq-item.active .cs-button:before {
     transform: rotate(180deg);
   }
-  #faq-254 .cs-faq-item.active .cs-button:after {
+  #faq .cs-faq-item.active .cs-button:after {
     opacity: 0;
     transform: rotate(360deg);
   }
-  #faq-254 .cs-faq-item.active .cs-item-p {
+  #faq .cs-faq-item.active .cs-item-p {
     height: auto;
     /* 12px - 16px */
     margin-bottom: clamp(0.75rem, 1.3vw, 1rem);
     opacity: 1;
   }
-  #faq-254 .cs-button {
+  #faq .cs-button {
     /* 16px - 20px */
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.2em;
@@ -1535,20 +1535,20 @@ button:focus-visible {
     width: 100%;
     position: relative;
   }
-  #faq-254 .cs-button:hover {
+  #faq .cs-button:hover {
     cursor: pointer;
   }
-  #faq-254 .cs-button:focus {
+  #faq .cs-button:focus {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
     border-radius: 2px;
   }
-  #faq-254 .cs-button:focus-visible {
+  #faq .cs-button:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
     border-radius: 2px;
   }
-  #faq-254 .cs-button:before {
+  #faq .cs-button:before {
     /* plus sign */
     content: "";
     width: 0.75rem;
@@ -1561,7 +1561,7 @@ button:focus-visible {
     right: 0.25rem;
     transition: transform 0.3s;
   }
-  #faq-254 .cs-button:after {
+  #faq .cs-button:after {
     /* plus sign */
     content: "";
     width: 0.75rem;
@@ -1576,7 +1576,7 @@ button:focus-visible {
     transform-origin: center;
     transition: opacity 0.5s, transform 0.3s;
   }
-  #faq-254 .cs-item-p {
+  #faq .cs-item-p {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: 1.5em;
@@ -1589,7 +1589,7 @@ button:focus-visible {
     overflow: hidden;
     transition: opacity 0.3s, margin-bottom 0.3s;
   }
-  #faq-254 .cs-cta {
+  #faq .cs-cta {
     text-align: center;
     /* 48px - 64px top & bottom */
     /* 40px - 56px left & right */
@@ -1599,7 +1599,7 @@ button:focus-visible {
     /* prevents padding from adding to width and height */
     box-sizing: border-box;
   }
-  #faq-254 .cs-h3 {
+  #faq .cs-h3 {
     /* 25px - 31px */
     font-size: clamp(1.5625rem, 3vw, 1.9375rem);
     line-height: 1.2em;
@@ -1609,7 +1609,7 @@ button:focus-visible {
     margin-bottom: 1rem;
     color: var(--headerColor);
   }
-  #faq-254 .cs-cta-p {
+  #faq .cs-cta-p {
     /* 16px - 20px */
     font-size: clamp(1rem, 2vw, 1.25rem);
     text-align: center;
@@ -1618,7 +1618,7 @@ button:focus-visible {
     /* 32px - 48px */
     margin-bottom: clamp(2rem, 3.9vw, 3rem);
   }
-  #faq-254 .cs-button-solid {
+  #faq .cs-button-solid {
     font-size: 1rem;
     /* 46px - 56px */
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -1637,7 +1637,7 @@ button:focus-visible {
     /* prevents padding from adding to the width */
     box-sizing: border-box;
   }
-  #faq-254 .cs-button-solid:before {
+  #faq .cs-button-solid:before {
     content: "";
     position: absolute;
     height: 100%;
@@ -1650,26 +1650,26 @@ button:focus-visible {
     border-radius: 0.25rem;
     transition: width 0.3s;
   }
-  #faq-254 .cs-button-solid:hover:before {
+  #faq .cs-button-solid:hover:before {
     width: 100%;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #faq-254 .cs-container {
+  #faq .cs-container {
     max-width: 67.5rem;
   }
-  #faq-254 .cs-flex-group {
+  #faq .cs-flex-group {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     /* 16px - 48px */
     gap: clamp(1rem, 3.5vw, 3rem);
   }
-  #faq-254 .cs-faq-group {
+  #faq .cs-faq-group {
     margin: 0;
   }
-  #faq-254 .cs-cta {
+  #faq .cs-cta {
     width: 38.5%;
     max-width: 25.8125rem;
     /* prevents flexbox from squishing it */
