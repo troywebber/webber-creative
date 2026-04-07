@@ -20,6 +20,7 @@ const animateElements = [
     ".cs-text",
     ".cs-card-group .cs-item",
     ".cs-image-group",
+    ".about-sbs-media",
     ".cs-content",
     ".cs-price"
 ];
