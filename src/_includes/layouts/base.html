@@ -74,7 +74,7 @@
 
         <title>{{ title }}</title>
     </head>
-    <body>
+    <body class="{% block bodyClass %}{% if page.url == '/' %}is-home{% else %}is-interior{% endif %}{% endblock %}">
         <a href="#main" class="skip">Skip to main content</a>
 
         {% include "components/header.html" %}

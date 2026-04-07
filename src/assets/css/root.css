@@ -1024,6 +1024,15 @@ button:focus-visible {
     padding-block-end: 6.25rem;
   }
 }
+/* Interior pages: top spacing under header (replaces empty #int-hero blocks) */
+body.is-interior main#main {
+  padding-top: 10rem;
+}
+
+body.is-blog-post main#main {
+  padding-top: 0;
+}
+
 /*-- -------------------------- -->
 <---          Footer            -->
 <--- -------------------------- -*/
