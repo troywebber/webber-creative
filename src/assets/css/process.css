@@ -20,17 +20,14 @@
     gap: clamp(3rem, 6vw, 4rem);
   }
   #steps-1675 .cs-content {
-    /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
   #steps-1675 .cs-text {
-    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
     max-width: 32.625rem;
   }
   #steps-1675 .cs-card-group {
@@ -43,22 +40,19 @@
   }
   #steps-1675 .cs-item {
     list-style: none;
-    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    /* bottom border */
   }
   #steps-1675 .cs-item::after {
     content: "";
     width: 100%;
     height: 1px;
-    /* to change the color of the bottom border, adjust the second color (at 50%). the first and third will blend the color to transparent */
-    /* note you'll also have to change the color in the tablet media query when the lines go vertical */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(186, 186, 186) 50%, rgba(255, 255, 255, 0) 100%);
+    /* Use consistent color for transparency to avoid muddy gradients */
+    background: linear-gradient(90deg, rgba(186, 186, 186, 0) 0%, rgb(186, 186, 186) 50%, rgba(186, 186, 186, 0) 100%);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -73,24 +67,21 @@
     content: none;
   }
   #steps-1675 .cs-icon {
-    /* 80px - 100px */
-    width: clamp(5rem, 1vw, 6.25rem);
-    height: clamp(5rem, 1vw, 6.25rem);
+    /* Adjusted clamp: 8vw ensures it actually grows between 80px and 100px */
+    width: clamp(5rem, 8vw, 6.25rem);
+    height: clamp(5rem, 8vw, 6.25rem);
     display: block;
     position: relative;
     opacity: 0.3;
-    /* 16px - 24px */
     margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
   #steps-1675 .cs-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Filter to match primary color (#0077be) */
     filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2000%) hue-rotate(185deg) brightness(0.9) contrast(1.2);
   }
   #steps-1675 .cs-h3 {
-    /* 20px - 25px */
     font-size: clamp(1.25rem, 2vw, 1.5625rem);
     font-weight: 700;
     line-height: 1.2em;
@@ -100,7 +91,6 @@
     z-index: 1;
   }
   #steps-1675 .cs-item-text {
-    /* 14px - 16px */
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.5em;
     text-align: left;
@@ -111,27 +101,24 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #steps-1675 .cs-container {
-    max-width: 120rem;
+    max-width: 80rem;
   }
   #steps-1675 .cs-card-group {
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
   }
   #steps-1675 .cs-item {
-    /* 24px - 60px */
     padding: clamp(1.5rem, 3vw, 3.75rem);
-    /* the specificity of the mobile .cs-item means we need to explicitly define the first and last items here, too */
   }
   #steps-1675 .cs-item::after {
     width: 1px;
     height: 100%;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(186, 186, 186) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(186, 186, 186, 0) 0%, rgb(186, 186, 186) 50%, rgba(186, 186, 186, 0) 100%);
     opacity: 0.6;
     right: 0;
     left: initial;
   }
   #steps-1675 .cs-item:first-of-type, #steps-1675 .cs-item:last-of-type {
-    /* 24px - 60px */
     padding: clamp(1.5rem, 3vw, 3.75rem);
   }
 }
@@ -159,7 +146,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(3rem, 6vw, 4rem);
+    gap: clamp(2rem, 4vw, 3rem);
   }
   #cta-1071 .cs-flex {
     max-width: 39.375rem;
@@ -176,15 +163,33 @@
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
+  #cta-1071 {
+    /* Styled as a floating card */
+    width: 90%;
+    max-width: 80rem;
+    margin: 4rem auto;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    padding: 3rem 2rem;
+  }
   #cta-1071 .cs-content {
-    text-align: left;
-    flex-direction: row;
+    flex-direction: row; /* Switch to side-by-side */
     justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  #cta-1071 .cs-flex {
+    text-align: left;
+    flex: 1;
   }
   #cta-1071 .cs-button-box {
     flex-wrap: nowrap;
     align-items: center;
     flex: none;
+  }
+  #cta-1071 .cs-title {
+    font-size: 2.25rem; /* 36px */
+    margin: 0;
   }
 }
 
