@@ -169,12 +169,12 @@
 }
 
 /*-- -------------------------- -->
-<---        Process CTA         -->
+<---            CTA             -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #process-cta {
+    #cta-1071 {
         padding: var(--sectionPadding);
         background-color: #f7f7f7;
 
@@ -182,16 +182,53 @@
             width: 100%;
             max-width: calc(1280 / 16 * 1rem);
             margin: auto;
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: calc(24 / 16 * 1rem);
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-flex {
+            max-width: calc(630 / 16 * 1rem);
         }
 
         .cs-title {
             margin: 0;
-            max-width: 28ch;
+        }
+
+        .cs-button-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: calc(16 / 16 * 1rem);
+        }
+
+    }
+
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #cta-1071 {
+        .cs-content {
+            text-align: left;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-button-box {
+            flex-wrap: nowrap;
+            align-items: center;
+            flex: none;
         }
     }
 }
