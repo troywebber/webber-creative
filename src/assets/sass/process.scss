@@ -167,3 +167,31 @@
         }
     }
 }
+
+/*-- -------------------------- -->
+<---        Process CTA         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #process-cta {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(24 / 16 * 1rem);
+        }
+
+        .cs-title {
+            margin: 0;
+            max-width: 28ch;
+        }
+    }
+}
