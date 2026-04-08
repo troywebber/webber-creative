@@ -269,6 +269,16 @@
                 cursor: pointer;
             }
         }
+
+        .cs-form-note {
+            width: 100%;
+            margin: calc(4 / 16 * 1rem) 0 0;
+            font-size: calc(13 / 16 * 1rem);
+            line-height: 1.4;
+            color: var(--bodyTextColor);
+            opacity: 0.8;
+            text-align: center;
+        }
     }
 }
 

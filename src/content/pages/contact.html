@@ -1,5 +1,5 @@
 ---
-title: Contact Us | Webber Creative | Canterbury, Kent.
+title: Contact Us | Webber Creative | Canterbury, Kent
 description: Get in touch with Webber Creative for custom website development. Contact us via phone, email, or our contact form. We respond the same day, 7 days a week.
 permalink: 'contact/'
 eleventyNavigation:
@@ -28,25 +28,12 @@ eleventyNavigation:
         {% if client.email %}"email": "{{ client.email }}",{% endif %}
         {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
         {% if client.domain %}"url": "{{ client.domain }}",{% endif %}
-        {% if client.address and client.address.city %}
         "address": {
-            "@type": "PostalAddress"{% if client.address.lineOne %},
-            "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-            {% endif %}
-            {% if client.address.city %},
-            "addressLocality": "{{ client.address.city }}"
-            {% endif %}
-            {% if client.address.state %},
-            "addressRegion": "{{ client.address.state }}"
-            {% endif %}
-            {% if client.address.zip %},
-            "postalCode": "{{ client.address.zip }}"
-            {% endif %}
-            {% if client.address.country %},
-            "addressCountry": "{{ client.address.country }}"
-            {% endif %}
+            "@type": "PostalAddress",
+            "addressLocality": "Canterbury",
+            "addressRegion": "Kent",
+            "addressCountry": "GB"
         }
-        {% endif %}
     }
 }
 </script>
@@ -91,7 +78,7 @@ eleventyNavigation:
                     </picture>
                     <div class="cs-flex-group">
                         <span class="cs-header">Areas Served</span>
-                        <span class="cs-link">Based in Kent, serving businesses across the UK</span>
+                        <span class="cs-link">Based in Canterbury, Kent</span>
                     </div>
                 </li>
             </ul>
@@ -117,6 +104,7 @@ eleventyNavigation:
             </label>
             <div data-netlify-recaptcha="true"></div>
             <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+            <p class="cs-form-note">We respond the same day. No spam, no sales calls.</p>
         </form>
     </div>
 </section>

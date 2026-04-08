@@ -236,6 +236,15 @@
     color: #fff;
     cursor: pointer;
   }
+  #contact-1388 .cs-form-note {
+    width: 100%;
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    text-align: center;
+  }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
