@@ -5,24 +5,27 @@
 @media only screen and (min-width: 0rem) {
   #steps-1675 {
     padding: var(--sectionPadding);
-    /* 80px - 120px */
     margin-bottom: clamp(5rem, 8vw, 7.5rem);
   }
   #steps-1675 .cs-container {
     width: 100%;
-    /* changes to 1920px at tablet */
     max-width: 36.5rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
+}
+@media only screen and (min-width: 0rem) and (min-width: 48rem) {
+  #steps-1675 .cs-container {
+    max-width: 80rem;
+  }
+}
+@media only screen and (min-width: 0rem) {
   #steps-1675 .cs-content {
     text-align: center;
     width: 100%;
-    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +41,14 @@
     align-items: stretch;
     grid-auto-flow: row;
   }
+}
+@media only screen and (min-width: 0rem) and (min-width: 48rem) {
+  #steps-1675 .cs-card-group {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+}
+@media only screen and (min-width: 0rem) {
   #steps-1675 .cs-item {
     list-style: none;
     box-sizing: border-box;
@@ -51,12 +62,23 @@
     content: "";
     width: 100%;
     height: 1px;
-    /* Use consistent color for transparency to avoid muddy gradients */
     background: linear-gradient(90deg, rgba(186, 186, 186, 0) 0%, rgb(186, 186, 186) 50%, rgba(186, 186, 186, 0) 100%);
     position: absolute;
     bottom: 0;
     left: 0;
   }
+}
+@media only screen and (min-width: 0rem) and (min-width: 48rem) {
+  #steps-1675 .cs-item::after {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(186, 186, 186, 0) 0%, rgb(186, 186, 186) 50%, rgba(186, 186, 186, 0) 100%);
+    opacity: 0.6;
+    right: 0;
+    left: initial;
+  }
+}
+@media only screen and (min-width: 0rem) {
   #steps-1675 .cs-item:first-of-type {
     padding-top: 0;
   }
@@ -66,19 +88,29 @@
   #steps-1675 .cs-item:last-of-type::after {
     content: none;
   }
+}
+@media only screen and (min-width: 0rem) and (min-width: 48rem) {
+  #steps-1675 .cs-item {
+    padding: clamp(1.5rem, 3vw, 3.75rem);
+  }
+  #steps-1675 .cs-item:first-of-type, #steps-1675 .cs-item:last-of-type {
+    padding: clamp(1.5rem, 3vw, 3.75rem);
+  }
+}
+@media only screen and (min-width: 0rem) {
   #steps-1675 .cs-icon {
-    /* Adjusted clamp: 8vw ensures it actually grows between 80px and 100px */
     width: clamp(5rem, 8vw, 6.25rem);
     height: clamp(5rem, 8vw, 6.25rem);
     display: block;
     position: relative;
-    opacity: 0.3;
+    opacity: 0.4;
     margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
   #steps-1675 .cs-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    /* Filter to match primary blue (#0077be) */
     filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2000%) hue-rotate(185deg) brightness(0.9) contrast(1.2);
   }
   #steps-1675 .cs-h3 {
@@ -86,40 +118,14 @@
     font-weight: 700;
     line-height: 1.2em;
     margin: 0 0 1rem 0;
-    color: var(--headerColor);
-    position: relative;
-    z-index: 1;
+    color: #1a1a1a;
   }
   #steps-1675 .cs-item-text {
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.5em;
     text-align: left;
     margin: 0;
-    color: var(--bodyTextColor);
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #steps-1675 .cs-container {
-    max-width: 80rem;
-  }
-  #steps-1675 .cs-card-group {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-  }
-  #steps-1675 .cs-item {
-    padding: clamp(1.5rem, 3vw, 3.75rem);
-  }
-  #steps-1675 .cs-item::after {
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(186, 186, 186, 0) 0%, rgb(186, 186, 186) 50%, rgba(186, 186, 186, 0) 100%);
-    opacity: 0.6;
-    right: 0;
-    left: initial;
-  }
-  #steps-1675 .cs-item:first-of-type, #steps-1675 .cs-item:last-of-type {
-    padding: clamp(1.5rem, 3vw, 3.75rem);
+    color: #4e4e4e;
   }
 }
 /*-- -------------------------- -->
@@ -130,6 +136,7 @@
   #cta-1071 {
     padding: var(--sectionPadding);
     background-color: #f7f7f7;
+    /* Desktop Adjustments */
   }
   #cta-1071 .cs-container {
     width: 100%;
@@ -153,6 +160,7 @@
   }
   #cta-1071 .cs-title {
     margin: 0;
+    font-size: clamp(1.9375rem, 4vw, 2.5rem);
   }
   #cta-1071 .cs-button-box {
     display: flex;
@@ -161,19 +169,18 @@
     gap: 1rem;
   }
 }
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 0rem) and (min-width: 64rem) {
   #cta-1071 {
-    /* Styled as a floating card */
     width: 90%;
-    max-width: 80rem;
     margin: 4rem auto;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 119, 190, 0.1);
     border-radius: 15px;
     padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   }
   #cta-1071 .cs-content {
-    flex-direction: row; /* Switch to side-by-side */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: left;
@@ -184,12 +191,14 @@
   }
   #cta-1071 .cs-button-box {
     flex-wrap: nowrap;
-    align-items: center;
     flex: none;
   }
+  #cta-1071 .cs-topper {
+    color: #0077be;
+    font-weight: 700;
+  }
   #cta-1071 .cs-title {
-    font-size: 2.25rem; /* 36px */
-    margin: 0;
+    font-size: 2.25rem;
   }
 }
 
