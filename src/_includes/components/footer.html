@@ -111,14 +111,18 @@
     </div>
     <!--Background-->
     <div class="cs-background">
-        <img
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/code.jpg"
-            sizes="100vw"
-            alt="code background"
-            width="1280"
-            height="568"
-        />
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/code-m.webp" type="image/webp" sizes="380px">
+            <source media="(min-width: 601px)" srcset="/assets/images/code.webp" type="image/webp" sizes="1280px">
+            <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/code.webp"
+                sizes="(max-width: 600px) 380px, 1280px"
+                alt="code background"
+                width="1280"
+                height="568"
+            />
+        </picture>
     </div>
 </footer>

@@ -50,6 +50,9 @@
         <link rel="preload" as="image" href="{{ preloadImg }}" />
         {% endif %}
 
+        <link rel="stylesheet" href="/assets/css/root.css" />
+        <script defer src="/assets/js/nav.js"></script>
+
         <script>
             function loadScript(a) {
                 var b = document.getElementsByTagName("head")[0],
@@ -66,9 +69,6 @@
                 }
             });
         </script>
-
-        <link rel="stylesheet" href="/assets/css/root.css" />
-        <script defer src="/assets/js/nav.js"></script>
 
         {% block head %}{% endblock %}
 
